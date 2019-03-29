@@ -1,0 +1,121 @@
+{
+  "Name": "Message",
+  "Namespace": "Message.v1_0_0",
+  "ModuleName": "Message",
+  "ElementType": "ComplexType",
+  "BaseType": "Message.Message",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "MessageId": {
+      "Name": "MessageId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the key for this message which can be used to look up the\n       message in a message registry.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "message_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MessageId\")"
+    },
+    "Message": {
+      "Name": "Message",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the human readable message, if provided.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "message",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Message\")"
+    },
+    "RelatedProperties": {
+      "Name": "RelatedProperties",
+      "Type": "Collection(Edm.String)",
+      "Description": "    \"\"\"This is an array of properties described by the message.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "related_properties",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"RelatedProperties\")"
+    },
+    "MessageArgs": {
+      "Name": "MessageArgs",
+      "Type": "Collection(Edm.String)",
+      "Description": "    \"\"\"This array of message arguments are substituted for the arguments in\n       the message when looked up in the message registry.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "message_args",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MessageArgs\")"
+    },
+    "Severity": {
+      "Name": "Severity",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the severity of the errors.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "severity",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Severity\")"
+    },
+    "Resolution": {
+      "Name": "Resolution",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Used to provide suggestions on how to resolve the situation that caused\n       the error.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "resolution",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Resolution\")"
+    },
+    "Oem": {
+      "Name": "Oem",
+      "Type": "Resource.Oem",
+      "Description": "    \"\"\"Oem extension object.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "PythonVariableName": "oem",
+      "IsSubResource": false,
+      "Expression": "resource.OemField(\"Oem\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Resource.Oem"
+  ],
+  "fields": [],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [
+    "resource"
+  ],
+  "IsCollectionExist": false
+}

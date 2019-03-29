@@ -1,0 +1,598 @@
+{
+  "Name": "Memory",
+  "Namespace": "Memory.v1_1_0",
+  "ModuleName": "Memory",
+  "ElementType": "EntityType",
+  "BaseType": "Memory.v1_0_0.Memory",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for definition of a Memory and its\n       configuration\n    \"\"\"",
+  "Properties": {
+    "MemoryType": {
+      "Name": "MemoryType",
+      "Type": "Memory.v1_0_0.MemoryType",
+      "Description": "    \"\"\"The type of Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "MemoryType",
+      "PythonVariableName": "memory_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MemoryType\")"
+    },
+    "MemoryDeviceType": {
+      "Name": "MemoryDeviceType",
+      "Type": "Memory.v1_0_0.MemoryDeviceType",
+      "Description": "    \"\"\"Type details of the Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "MemoryDeviceType",
+      "PythonVariableName": "memory_device_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MemoryDeviceType\")"
+    },
+    "BaseModuleType": {
+      "Name": "BaseModuleType",
+      "Type": "Memory.v1_0_0.BaseModuleType",
+      "Description": "    \"\"\"The base module type of Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "BaseModuleType",
+      "PythonVariableName": "base_module_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"BaseModuleType\")"
+    },
+    "MemoryMedia": {
+      "Name": "MemoryMedia",
+      "Type": "Collection(Memory.v1_0_0.MemoryMedia)",
+      "Description": "    \"\"\"Media  of this Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "MemoryMedia",
+      "PythonVariableName": "memory_media",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MemoryMedia\")"
+    },
+    "CapacityMiB": {
+      "Name": "CapacityMiB",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Memory Capacity in MiB.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "capacity_mi_b",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CapacityMiB\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "DataWidthBits": {
+      "Name": "DataWidthBits",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Data Width in bits.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "data_width_bits",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DataWidthBits\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "BusWidthBits": {
+      "Name": "BusWidthBits",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Bus Width in bits.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "bus_width_bits",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"BusWidthBits\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Manufacturer": {
+      "Name": "Manufacturer",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Memory manufacturer\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturer",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Manufacturer\")"
+    },
+    "SerialNumber": {
+      "Name": "SerialNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The product serial number of this device\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "serial_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SerialNumber\")"
+    },
+    "PartNumber": {
+      "Name": "PartNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The product part number of this device\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "part_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PartNumber\")"
+    },
+    "AllowedSpeedsMHz": {
+      "Name": "AllowedSpeedsMHz",
+      "Type": "Collection(Edm.Int64)",
+      "Description": "    \"\"\"Speed bins supported by this Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "allowed_speeds_m_hz",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"AllowedSpeedsMHz\")"
+    },
+    "FirmwareRevision": {
+      "Name": "FirmwareRevision",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Revision of firmware on the Memory controller\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "firmware_revision",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FirmwareRevision\")"
+    },
+    "FirmwareApiVersion": {
+      "Name": "FirmwareApiVersion",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Version of API supported by the firmware\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "firmware_api_version",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FirmwareApiVersion\")"
+    },
+    "FunctionClasses": {
+      "Name": "FunctionClasses",
+      "Type": "Collection(Edm.String)",
+      "Description": "    \"\"\"Function Classes by the Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "function_classes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FunctionClasses\")"
+    },
+    "VendorID": {
+      "Name": "VendorID",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Vendor ID\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "vendor_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VendorID\")"
+    },
+    "DeviceID": {
+      "Name": "DeviceID",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Device ID\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "device_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DeviceID\")"
+    },
+    "SubsystemVendorID": {
+      "Name": "SubsystemVendorID",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"SubSystem Vendor ID\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "subsystem_vendor_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SubsystemVendorID\")"
+    },
+    "SubsystemDeviceID": {
+      "Name": "SubsystemDeviceID",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Subsystem Device ID\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "subsystem_device_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SubsystemDeviceID\")"
+    },
+    "MaxTDPMilliWatts": {
+      "Name": "MaxTDPMilliWatts",
+      "Type": "Collection(Edm.Int64)",
+      "Description": "    \"\"\"Maximum TDPs in milli Watts\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_tdp_milli_watts",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxTDPMilliWatts\")"
+    },
+    "SpareDeviceCount": {
+      "Name": "SpareDeviceCount",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Number of unused spare devices available in the Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "spare_device_count",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SpareDeviceCount\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "RankCount": {
+      "Name": "RankCount",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Number of ranks available in the Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "rank_count",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"RankCount\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "DeviceLocator": {
+      "Name": "DeviceLocator",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Location of the Memory in the platform\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "device_locator",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DeviceLocator\")"
+    },
+    "MemoryLocation": {
+      "Name": "MemoryLocation",
+      "Type": "Memory.v1_0_0.MemoryLocation",
+      "Description": "    \"\"\"Memory connection information to sockets and memory controllers.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "MemoryLocation",
+      "PythonVariableName": "memory_location",
+      "IsSubResource": false,
+      "Expression": "MemoryLocationField(\"MemoryLocation\")"
+    },
+    "ErrorCorrection": {
+      "Name": "ErrorCorrection",
+      "Type": "Memory.v1_0_0.ErrorCorrection",
+      "Description": "    \"\"\"Error correction scheme supported for this memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "ErrorCorrection",
+      "PythonVariableName": "error_correction",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ErrorCorrection\")"
+    },
+    "OperatingSpeedMhz": {
+      "Name": "OperatingSpeedMhz",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Operating speed of Memory in MHz\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "operating_speed_mhz",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"OperatingSpeedMhz\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "VolatileRegionSizeLimitMiB": {
+      "Name": "VolatileRegionSizeLimitMiB",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Total size of volatile regions in MiB\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "volatile_region_size_limit_mi_b",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VolatileRegionSizeLimitMiB\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "PersistentRegionSizeLimitMiB": {
+      "Name": "PersistentRegionSizeLimitMiB",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Total size of persistent regions in MiB\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "persistent_region_size_limit_mi_b",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PersistentRegionSizeLimitMiB\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Regions": {
+      "Name": "Regions",
+      "Type": "Collection(Memory.v1_0_0.RegionSet)",
+      "Description": "    \"\"\"Memory regions information within the Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "RegionSet",
+      "PythonVariableName": "regions",
+      "IsSubResource": false,
+      "Expression": "RegionSetCollectionField(\"Regions\")"
+    },
+    "OperatingMemoryModes": {
+      "Name": "OperatingMemoryModes",
+      "Type": "Collection(Memory.v1_0_0.OperatingMemoryModes)",
+      "Description": "    \"\"\"Memory modes supported by the Memory\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "OperatingMemoryModes",
+      "PythonVariableName": "operating_memory_modes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"OperatingMemoryModes\")"
+    },
+    "IsSpareDeviceEnabled": {
+      "Name": "IsSpareDeviceEnabled",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Spare device enabled status\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "is_spare_device_enabled",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"IsSpareDeviceEnabled\", adapter=bool)"
+    },
+    "IsRankSpareEnabled": {
+      "Name": "IsRankSpareEnabled",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Rank spare enabled status\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "is_rank_spare_enabled",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"IsRankSpareEnabled\", adapter=bool)"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Memory.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Oem": {
+      "Name": "Oem",
+      "Description": "    \"\"\"Oem specific properties.\"\"\"",
+      "PythonVariableName": "oem",
+      "Expression": "OemField(\"Oem\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Memory.v1_0_0.MemoryLocation",
+    "Intel.Oem.Memory"
+  ],
+  "fields": [
+    {
+      "Name": "Memory",
+      "Namespace": "Intel.Oem",
+      "ModuleName": "IntelRackScale",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.OemObject",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "VoltageVolt": {
+          "Name": "VoltageVolt",
+          "Type": "Edm.Decimal",
+          "Description": "    \"\"\"This indicates current voltage of memory module\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Decimal",
+          "PythonVariableName": "voltage_volt",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"VoltageVolt\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    },
+    {
+      "Name": "MemoryLocation",
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "MemoryLocation",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       .\n    \"\"\"",
+      "Properties": {
+        "Socket": {
+          "Name": "Socket",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Socket number in which Memory is connected\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "socket",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Socket\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "MemoryController": {
+          "Name": "MemoryController",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Memory controller number in which Memory is connected\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "memory_controller",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MemoryController\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "Channel": {
+          "Name": "Channel",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Channel number in which Memory is connected\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "channel",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Channel\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "Slot": {
+          "Name": "Slot",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Slot number in which Memory is connected\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "slot",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Slot\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    },
+    {
+      "Name": "Oem",
+      "ModuleName": "Oem",
+      "Description": null,
+      "Properties": {
+        "Intel_RackScale": {
+          "Name": "Intel_RackScale",
+          "Description": "    \"\"\"Intel Rack Scale Design specific properties.\"\"\"",
+          "PythonVariableName": "intel_rackscale",
+          "Expression": "IntelRackScaleField(\"Intel_RackScale\")"
+        }
+      },
+      "NavigationProperties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Memory.v1_0_0.RegionSet"
+  ],
+  "collection_fields": [
+    {
+      "Name": "RegionSet",
+      "Namespace": "Memory.v1_0_0",
+      "ModuleName": "RegionSet",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Memory memory region information.\n    \"\"\"",
+      "Properties": {
+        "RegionId": {
+          "Name": "RegionId",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"Unique region ID representing a specific region within the Memory\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "region_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"RegionId\")"
+        },
+        "MemoryClassification": {
+          "Name": "MemoryClassification",
+          "Type": "Memory.v1_0_0.MemoryClassification",
+          "Description": "    \"\"\"Classification of memory occupied by the given memory region\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Memory.v1_0_0",
+          "ModuleName": "MemoryClassification",
+          "PythonVariableName": "memory_classification",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MemoryClassification\")"
+        },
+        "OffsetMiB": {
+          "Name": "OffsetMiB",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Offset with in the Memory that corresponds to the starting of this\n       memory region in MiB\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "offset_mi_b",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"OffsetMiB\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "SizeMiB": {
+          "Name": "SizeMiB",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Size of this memory region in MiB\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "size_mi_b",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SizeMiB\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "PassphraseState": {
+          "Name": "PassphraseState",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"State of the passphrase for this region\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "passphrase_state",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PassphraseState\", adapter=bool)"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

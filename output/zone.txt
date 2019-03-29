@@ -1,0 +1,84 @@
+{
+  "Name": "Zone",
+  "Namespace": "Zone.v1_0_0",
+  "ModuleName": "Zone",
+  "ElementType": "EntityType",
+  "BaseType": "Zone.Zone",
+  "IsReferenceableMember": false,
+  "Description": "       Switch contains properties describing a simple fabric zone.\n    \"\"\"",
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Zone.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Zone.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Zone.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "Zone.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Endpoints": {
+          "Name": "Endpoints",
+          "Type": "Collection(Endpoint.Endpoint)",
+          "Description": "    \"\"\"An array of references to the endpoints that are contained in this zone.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Endpoint",
+          "ModuleName": "Endpoint",
+          "PythonVariableName": "endpoints",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Endpoints\", adapter=utils.get_members_identities)"
+        },
+        "InvolvedSwitches": {
+          "Name": "InvolvedSwitches",
+          "Type": "Collection(Switch.Switch)",
+          "Description": "    \"\"\"An array of references to the switchs that are utilized in this zone.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Switch",
+          "ModuleName": "Switch",
+          "PythonVariableName": "involved_switches",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"InvolvedSwitches\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

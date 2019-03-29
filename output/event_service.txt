@@ -1,0 +1,107 @@
+{
+  "Name": "EventService",
+  "Namespace": "EventService.v1_0_2",
+  "ModuleName": "EventService",
+  "ElementType": "EntityType",
+  "BaseType": "EventService.v1_0_0.EventService",
+  "IsReferenceableMember": false,
+  "Description": "       The Event Service resource contains properties for managing event\n       subcriptions and generates the events sent to subscribers.  The\n       resource has links to the actual collection of subscriptions (called\n       Event Destinations).\n    \"\"\"",
+  "Properties": {
+    "ServiceEnabled": {
+      "Name": "ServiceEnabled",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates whether this service is enabled.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "service_enabled",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ServiceEnabled\", adapter=bool)"
+    },
+    "DeliveryRetryAttempts": {
+      "Name": "DeliveryRetryAttempts",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"This is the number of attempts an event posting is retried before the\n       subscription is terminated.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "delivery_retry_attempts",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DeliveryRetryAttempts\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "DeliveryRetryIntervalSeconds": {
+      "Name": "DeliveryRetryIntervalSeconds",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"This represents the number of seconds between retry attempts for\n       sending any given Event\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "delivery_retry_interval_seconds",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DeliveryRetryIntervalSeconds\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "EventTypesForSubscription": {
+      "Name": "EventTypesForSubscription",
+      "Type": "Collection(Event.v1_0_0.EventType)",
+      "Description": "    \"\"\"This is the types of Events that can be subscribed to.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Event.v1_0_0",
+      "ModuleName": "EventType",
+      "PythonVariableName": "event_types_for_subscription",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EventTypesForSubscription\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "EventService.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EventService.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [],
+  "fields": [],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "Subscriptions",
+      "Type": "EventDestinationCollection.EventDestinationCollection",
+      "Description": "    \"\"\"This is a reference to a collection of Event Destination resources.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "EventDestinationCollection",
+      "ModuleName": "EventDestinationCollection",
+      "PythonVariableName": "subscriptions",
+      "IsSubResource": false,
+      "PythonModuleName": "event_destination"
+    }
+  ],
+  "other_modules": [],
+  "HaveAction": true,
+  "IsCollectionExist": false
+}

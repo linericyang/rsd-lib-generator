@@ -1,0 +1,119 @@
+{
+  "Name": "LogService",
+  "Namespace": "LogService.v1_0_2",
+  "ModuleName": "LogService",
+  "ElementType": "EntityType",
+  "BaseType": "LogService.v1_0_0.LogService",
+  "IsReferenceableMember": false,
+  "Description": "       This resource represents the log service for the resource or service to\n       which it is associated.\n    \"\"\"",
+  "Properties": {
+    "ServiceEnabled": {
+      "Name": "ServiceEnabled",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates whether this service is enabled.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "service_enabled",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ServiceEnabled\", adapter=bool)"
+    },
+    "MaxNumberOfRecords": {
+      "Name": "MaxNumberOfRecords",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The maximum number of log entries this service can have.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_number_of_records",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxNumberOfRecords\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "OverWritePolicy": {
+      "Name": "OverWritePolicy",
+      "Type": "LogService.v1_0_0.OverWritePolicy",
+      "Description": "    \"\"\"The overwrite policy for this service that takes place when the log is\n       full.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogService.v1_0_0",
+      "ModuleName": "OverWritePolicy",
+      "PythonVariableName": "over_write_policy",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"OverWritePolicy\")"
+    },
+    "DateTime": {
+      "Name": "DateTime",
+      "Type": "Edm.DateTimeOffset",
+      "Description": "    \"\"\"The current DateTime (with offset) for the log service, used to set or\n       read time.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "DateTimeOffset",
+      "PythonVariableName": "date_time",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DateTime\")"
+    },
+    "DateTimeLocalOffset": {
+      "Name": "DateTimeLocalOffset",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The time offset from UTC that the DateTime property is set to in\n       format: +06:00 .\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "date_time_local_offset",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DateTimeLocalOffset\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "LogService.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogService.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [],
+  "fields": [],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "Entries",
+      "Type": "LogEntryCollection.LogEntryCollection",
+      "Description": "    \"\"\"References to the log entry collection.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "LogEntryCollection",
+      "ModuleName": "LogEntryCollection",
+      "PythonVariableName": "entries",
+      "IsSubResource": false,
+      "PythonModuleName": "log_entry"
+    }
+  ],
+  "other_modules": [],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

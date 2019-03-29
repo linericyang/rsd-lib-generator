@@ -1,0 +1,387 @@
+{
+  "Name": "ComposedNode",
+  "Namespace": "ComposedNode.v1_0_0",
+  "ModuleName": "ComposedNode",
+  "ElementType": "EntityType",
+  "BaseType": "ComposedNode.ComposedNode",
+  "IsReferenceableMember": false,
+  "Description": "       This schema defines a node and its respective properties.\n    \"\"\"",
+  "Properties": {
+    "Links": {
+      "Name": "Links",
+      "Type": "ComposedNode.v1_0_0.Links",
+      "Description": "    \"\"\"Contains links to other resources that are related to this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ComposedNode.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "ComposedNode.v1_0_0.Actions",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ComposedNode.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "ComposedNodeState": {
+      "Name": "ComposedNodeState",
+      "Type": "ComposedNode.v1_0_0.ComposedNodeState",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ComposedNode.v1_0_0",
+      "ModuleName": "ComposedNodeState",
+      "PythonVariableName": "composed_node_state",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ComposedNodeState\")"
+    },
+    "AssetTag": {
+      "Name": "AssetTag",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The user definable tag that can be used to track this computer system\n       for inventory or other client purposes\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "asset_tag",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"AssetTag\")"
+    },
+    "UUID": {
+      "Name": "UUID",
+      "Type": "Resource.UUID",
+      "Description": "    \"\"\"The universal unique identifier (UUID) for this system\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "UUID",
+      "PythonVariableName": "uuid",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"UUID\")"
+    },
+    "PowerState": {
+      "Name": "PowerState",
+      "Type": "ComputerSystem.v1_0_0.PowerState",
+      "Description": "    \"\"\"This is the current power state of the system\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ComputerSystem.v1_0_0",
+      "ModuleName": "PowerState",
+      "PythonVariableName": "power_state",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PowerState\")"
+    },
+    "Boot": {
+      "Name": "Boot",
+      "Type": "ComputerSystem.v1_1_0.Boot",
+      "Description": "    \"\"\"Information about the boot settings for this system\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ComputerSystem.v1_1_0",
+      "ModuleName": "Boot",
+      "PythonVariableName": "boot",
+      "IsSubResource": false,
+      "Expression": "computer_system.BootField(\"Boot\")"
+    },
+    "Processors": {
+      "Name": "Processors",
+      "Type": "ComputerSystem.v1_0_0.ProcessorSummary",
+      "Description": "    \"\"\"This object describes the central processors of the system in general\n       detail.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ComputerSystem.v1_0_0",
+      "ModuleName": "ProcessorSummary",
+      "PythonVariableName": "processors",
+      "IsSubResource": false,
+      "Expression": "computer_system.ProcessorSummaryField(\"Processors\")"
+    },
+    "Memory": {
+      "Name": "Memory",
+      "Type": "ComputerSystem.v1_0_0.MemorySummary",
+      "Description": "    \"\"\"This object describes the central memory of the system in general\n       detail.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ComputerSystem.v1_0_0",
+      "ModuleName": "MemorySummary",
+      "PythonVariableName": "memory",
+      "IsSubResource": false,
+      "Expression": "computer_system.MemorySummaryField(\"Memory\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "ComposedNode.v1_0_0.Links",
+    "ComputerSystem.v1_0_0.MemorySummary",
+    "ComputerSystem.v1_0_0.ProcessorSummary",
+    "ComputerSystem.v1_1_0.Boot"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "ComposedNode.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "ComputerSystem": {
+          "Name": "ComputerSystem",
+          "Type": "Collection(ComputerSystem.v1_0_0.ComputerSystem)",
+          "Description": "    \"\"\"\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "ComputerSystem.v1_0_0",
+          "ModuleName": "ComputerSystem",
+          "PythonVariableName": "computer_system",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ComputerSystem\", adapter=utils.get_members_identities)"
+        },
+        "Processors": {
+          "Name": "Processors",
+          "Type": "Collection(Processor.v1_0_0.Processor)",
+          "Description": "    \"\"\"\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Processor.v1_0_0",
+          "ModuleName": "Processor",
+          "PythonVariableName": "processors",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Processors\", adapter=utils.get_members_identities)"
+        },
+        "Memory": {
+          "Name": "Memory",
+          "Type": "Collection(Memory.v1_0_0.Memory)",
+          "Description": "    \"\"\"\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Memory.v1_0_0",
+          "ModuleName": "Memory",
+          "PythonVariableName": "memory",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Memory\", adapter=utils.get_members_identities)"
+        },
+        "EthernetInterfaces": {
+          "Name": "EthernetInterfaces",
+          "Type": "Collection(EthernetInterface.v1_0_0.EthernetInterface)",
+          "Description": "    \"\"\"\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "EthernetInterface.v1_0_0",
+          "ModuleName": "EthernetInterface",
+          "PythonVariableName": "ethernet_interfaces",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"EthernetInterfaces\", adapter=utils.get_members_identities)"
+        },
+        "LocalDrives": {
+          "Name": "LocalDrives",
+          "Type": "Collection(Resource.Item)",
+          "Description": "    \"\"\"\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Resource",
+          "ModuleName": "Item",
+          "PythonVariableName": "local_drives",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"LocalDrives\", adapter=utils.get_members_identities)"
+        },
+        "RemoteDrives": {
+          "Name": "RemoteDrives",
+          "Type": "Collection(RemoteTarget.v1_0_0.RemoteTarget)",
+          "Description": "    \"\"\"\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "RemoteTarget.v1_0_0",
+          "ModuleName": "RemoteTarget",
+          "PythonVariableName": "remote_drives",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"RemoteDrives\", adapter=utils.get_members_identities)"
+        },
+        "ManagedBy": {
+          "Name": "ManagedBy",
+          "Type": "Collection(Manager.v1_0_0.Manager)",
+          "Description": "    \"\"\"\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Manager.v1_0_0",
+          "ModuleName": "Manager",
+          "PythonVariableName": "managed_by",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ManagedBy\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [
+    {
+      "Name": "Boot",
+      "Namespace": "ComputerSystem.v1_1_0",
+      "ModuleName": "Boot",
+      "ElementType": "ComplexType",
+      "BaseType": "ComputerSystem.v1_0_0.Boot",
+      "IsReferenceableMember": false,
+      "Description": "       This object contains the boot information for the current resource.\n    \"\"\"",
+      "Properties": {
+        "BootSourceOverrideTarget": {
+          "Name": "BootSourceOverrideTarget",
+          "Type": "ComputerSystem.v1_0_0.BootSource",
+          "Description": "    \"\"\"The current boot source to be used at next boot instead of the normal\n       boot device, if BootSourceOverrideEnabled is true.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "ComputerSystem.v1_0_0",
+          "ModuleName": "BootSource",
+          "PythonVariableName": "boot_source_override_target",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"BootSourceOverrideTarget\")"
+        },
+        "BootSourceOverrideEnabled": {
+          "Name": "BootSourceOverrideEnabled",
+          "Type": "ComputerSystem.v1_0_0.BootSourceOverrideEnabled",
+          "Description": "    \"\"\"Describes the state of the Boot Source Override feature\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "ComputerSystem.v1_0_0",
+          "ModuleName": "BootSourceOverrideEnabled",
+          "PythonVariableName": "boot_source_override_enabled",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"BootSourceOverrideEnabled\")"
+        },
+        "UefiTargetBootSourceOverride": {
+          "Name": "UefiTargetBootSourceOverride",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This property is the UEFI Device Path of the device to boot from when\n       BootSourceOverrideSupported is UefiTarget.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "uefi_target_boot_source_override",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"UefiTargetBootSourceOverride\")"
+        },
+        "BootSourceOverrideMode": {
+          "Name": "BootSourceOverrideMode",
+          "Type": "ComputerSystem.v1_1_0.BootSourceOverrideMode",
+          "Description": "    \"\"\"The BIOS Boot Mode (either Legacy or UEFI) to be used when\n       BootSourceOverrideTarget boot source is booted from.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "ComputerSystem.v1_1_0",
+          "ModuleName": "BootSourceOverrideMode",
+          "PythonVariableName": "boot_source_override_mode",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"BootSourceOverrideMode\")"
+        }
+      }
+    },
+    {
+      "Name": "ProcessorSummary",
+      "Namespace": "ComputerSystem.v1_0_0",
+      "ModuleName": "ProcessorSummary",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       This object describes the central processors of the system in general\n       detail.\n    \"\"\"",
+      "Properties": {
+        "Count": {
+          "Name": "Count",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"The number of processors in the system.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "count",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Count\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "Model": {
+          "Name": "Model",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The processor model for the primary or majority of processors in this\n       system.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "model",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Model\")"
+        },
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        }
+      }
+    },
+    {
+      "Name": "MemorySummary",
+      "Namespace": "ComputerSystem.v1_0_0",
+      "ModuleName": "MemorySummary",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       This object describes the memory of the system in general detail.\n    \"\"\"",
+      "Properties": {
+        "TotalSystemMemoryGiB": {
+          "Name": "TotalSystemMemoryGiB",
+          "Type": "Edm.Decimal",
+          "Description": "    \"\"\"The total installed, operating system-accessible memory (RAM), measured\n       in GiB.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Decimal",
+          "PythonVariableName": "total_system_memory_gi_b",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"TotalSystemMemoryGiB\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        }
+      }
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [
+    "computer_system"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

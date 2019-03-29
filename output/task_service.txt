@@ -1,0 +1,95 @@
+{
+  "Name": "TaskService",
+  "Namespace": "TaskService.v1_0_2",
+  "ModuleName": "TaskService",
+  "ElementType": "EntityType",
+  "BaseType": "TaskService.v1_0_0.TaskService",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for the Task Service.  It represents the\n       properties for the service itself and has links to the actual list of\n       tasks.\n    \"\"\"",
+  "Properties": {
+    "CompletedTaskOverWritePolicy": {
+      "Name": "CompletedTaskOverWritePolicy",
+      "Type": "TaskService.v1_0_0.OverWritePolicy",
+      "Description": "    \"\"\"Overwrite policy of completed tasks\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "TaskService.v1_0_0",
+      "ModuleName": "OverWritePolicy",
+      "PythonVariableName": "completed_task_over_write_policy",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CompletedTaskOverWritePolicy\")"
+    },
+    "DateTime": {
+      "Name": "DateTime",
+      "Type": "Edm.DateTimeOffset",
+      "Description": "    \"\"\"The current DateTime (with offset) setting that the task service is\n       using.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "DateTimeOffset",
+      "PythonVariableName": "date_time",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DateTime\")"
+    },
+    "LifeCycleEventOnTaskStateChange": {
+      "Name": "LifeCycleEventOnTaskStateChange",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Send an Event upon Task State Change.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "life_cycle_event_on_task_state_change",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"LifeCycleEventOnTaskStateChange\", adapter=bool)"
+    },
+    "ServiceEnabled": {
+      "Name": "ServiceEnabled",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates whether this service is enabled.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "service_enabled",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ServiceEnabled\", adapter=bool)"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [],
+  "fields": [],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "Tasks",
+      "Type": "TaskCollection.TaskCollection",
+      "Description": "    \"\"\"References to the Tasks collection.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "TaskCollection",
+      "ModuleName": "TaskCollection",
+      "PythonVariableName": "tasks",
+      "IsSubResource": false,
+      "PythonModuleName": "task"
+    }
+  ],
+  "other_modules": [],
+  "IsCollectionExist": false
+}

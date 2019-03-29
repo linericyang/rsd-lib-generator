@@ -1,0 +1,378 @@
+{
+  "Name": "Storage",
+  "Namespace": "Storage.v1_1_0",
+  "ModuleName": "Storage",
+  "ElementType": "EntityType",
+  "BaseType": "Storage.v1_0_1.Storage",
+  "IsReferenceableMember": false,
+  "Description": "       This schema defines a storage subsystem and its respective properties. \n       A storage subsystem represents a set of storage controllers (physical\n       or virtual) and the resources such as volumes that can be accessed from\n       that subsystem.\n    \"\"\"",
+  "Properties": {
+    "Links": {
+      "Name": "Links",
+      "Type": "Storage.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Storage.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "StorageControllers": {
+      "Name": "StorageControllers",
+      "Type": "Collection(Storage.v1_0_0.StorageController)",
+      "Description": "    \"\"\"The set of storage controllers represented by this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "StorageController",
+      "PythonVariableName": "storage_controllers",
+      "IsSubResource": false,
+      "Expression": "StorageControllerCollectionField(\"StorageControllers\")"
+    },
+    "Redundancy": {
+      "Name": "Redundancy",
+      "Type": "Collection(Redundancy.Redundancy)",
+      "Description": "    \"\"\"Redundancy information for the storage subsystem\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "PythonVariableName": "redundancy",
+      "IsSubResource": false,
+      "Expression": "redundancy.RedundancyCollectionField(\"Redundancy\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Storage.v1_0_0.Links",
+    "Storage.v1_1_0.StorageControllerLinks"
+  ],
+  "fields": [
+    {
+      "Name": "StorageControllerLinks",
+      "Namespace": "Storage.v1_1_0",
+      "ModuleName": "StorageControllerLinks",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Endpoints": {
+          "Name": "Endpoints",
+          "Type": "Collection(Endpoint.Endpoint)",
+          "Description": "    \"\"\"An array of references to the endpoints that connect to this controller.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Endpoint",
+          "ModuleName": "Endpoint",
+          "PythonVariableName": "endpoints",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Endpoints\", adapter=utils.get_members_identities)"
+        }
+      }
+    },
+    {
+      "Name": "Links",
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Enclosures": {
+          "Name": "Enclosures",
+          "Type": "Collection(Chassis.Chassis)",
+          "Description": "    \"\"\"An array of references to the chassis to which this storage subsystem\n       is attached\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Chassis",
+          "ModuleName": "Chassis",
+          "PythonVariableName": "enclosures",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Enclosures\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Resource.v1_1_0.Identifier",
+    "Redundancy.Redundancy",
+    "Storage.v1_1_0.StorageController"
+  ],
+  "collection_fields": [
+    {
+      "Name": "StorageController",
+      "Namespace": "Storage.v1_1_0",
+      "ModuleName": "StorageController",
+      "ElementType": "EntityType",
+      "BaseType": "Storage.v1_0_0.StorageController",
+      "IsReferenceableMember": true,
+      "Description": "       This schema defines a storage controller and its respective properties.\n       A storage controller represents a storage device (physical or virtual)\n       that produces Volumes.\n    \"\"\"",
+      "Properties": {
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        },
+        "SpeedGbps": {
+          "Name": "SpeedGbps",
+          "Type": "Edm.Decimal",
+          "Description": "    \"\"\"The speed of the storage controller interface.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Decimal",
+          "PythonVariableName": "speed_gbps",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SpeedGbps\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "FirmwareVersion": {
+          "Name": "FirmwareVersion",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The firmware version of this storage Controller\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "firmware_version",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"FirmwareVersion\")"
+        },
+        "Manufacturer": {
+          "Name": "Manufacturer",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the manufacturer of this storage controller.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "manufacturer",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Manufacturer\")"
+        },
+        "Model": {
+          "Name": "Model",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the model number for the storage controller.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "model",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Model\")"
+        },
+        "SKU": {
+          "Name": "SKU",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the SKU for this storage controller.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "sku",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SKU\")"
+        },
+        "SerialNumber": {
+          "Name": "SerialNumber",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The serial number for this storage controller.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "serial_number",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SerialNumber\")"
+        },
+        "PartNumber": {
+          "Name": "PartNumber",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The part number for this storage controller.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "part_number",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PartNumber\")"
+        },
+        "AssetTag": {
+          "Name": "AssetTag",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The user assigned asset tag for this storage controller.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "asset_tag",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AssetTag\")"
+        },
+        "SupportedControllerProtocols": {
+          "Name": "SupportedControllerProtocols",
+          "Type": "Collection(Storage.v1_0_0.Protocol)",
+          "Description": "    \"\"\"This represents the protocols by which this storage controller can be\n       communicated to.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Storage.v1_0_0",
+          "ModuleName": "Protocol",
+          "PythonVariableName": "supported_controller_protocols",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SupportedControllerProtocols\")"
+        },
+        "SupportedDeviceProtocols": {
+          "Name": "SupportedDeviceProtocols",
+          "Type": "Collection(Storage.v1_0_0.Protocol)",
+          "Description": "    \"\"\"This represents the protocols which the storage controller can use to\n       communicate with attached devices.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Storage.v1_0_0",
+          "ModuleName": "Protocol",
+          "PythonVariableName": "supported_device_protocols",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SupportedDeviceProtocols\")"
+        },
+        "Identifiers": {
+          "Name": "Identifiers",
+          "Type": "Collection(Resource.v1_1_0.Identifier)",
+          "Description": "    \"\"\"The Durable names for the storage controller\"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Resource.v1_1_0",
+          "ModuleName": "Identifier",
+          "PythonVariableName": "identifiers",
+          "IsSubResource": true,
+          "Expression": "resource.IdentifierCollectionField(\"Identifiers\")"
+        },
+        "Links": {
+          "Name": "Links",
+          "Type": "Storage.v1_1_0.StorageControllerLinks",
+          "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Storage.v1_1_0",
+          "ModuleName": "StorageControllerLinks",
+          "PythonVariableName": "links",
+          "IsSubResource": true,
+          "Expression": "StorageControllerLinksField(\"Links\")"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [
+    {
+      "Name": "Identifier",
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Identifier",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "DurableName": {
+          "Name": "DurableName",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This indicates the world wide, persistent name of the resource.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "durable_name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableName\")"
+        },
+        "DurableNameFormat": {
+          "Name": "DurableNameFormat",
+          "Type": "Resource.v1_1_0.DurableNameFormat",
+          "Description": "    \"\"\"This represents the format of the DurableName property.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource.v1_1_0",
+          "ModuleName": "DurableNameFormat",
+          "PythonVariableName": "durable_name_format",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableNameFormat\")"
+        }
+      }
+    },
+    {
+      "Name": "Redundancy",
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "ElementType": "EntityType",
+      "BaseType": "Resource.v1_0_0.ReferenceableMember",
+      "IsReferenceableMember": true,
+      "Description": "       This is the common redundancy definition and structure used in other\n       Redfish schemas.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "links_fields": [
+    {
+      "Name": "Drives",
+      "Type": "Collection(Drive.Drive)",
+      "Description": "    \"\"\"The set of drives attached to the storage controllers represented by\n       this resource.\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": true,
+      "Namespace": "Drive",
+      "ModuleName": "Drive",
+      "PythonVariableName": "drives",
+      "IsSubResource": false,
+      "PythonModuleName": "drive"
+    },
+    {
+      "Name": "Volumes",
+      "Type": "VolumeCollection.VolumeCollection",
+      "Description": "    \"\"\"The set of volumes produced by the storage controllers represented by\n       this resource.\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "VolumeCollection",
+      "ModuleName": "VolumeCollection",
+      "PythonVariableName": "volumes",
+      "IsSubResource": false,
+      "PythonModuleName": "volume"
+    }
+  ],
+  "other_modules": [
+    "redundancy",
+    "resource"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

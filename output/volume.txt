@@ -1,0 +1,269 @@
+{
+  "Name": "Volume",
+  "Namespace": "Volume.v1_0_1",
+  "ModuleName": "Volume",
+  "ElementType": "EntityType",
+  "BaseType": "Volume.v1_0_0.Volume",
+  "IsReferenceableMember": false,
+  "Description": "       Volume contains properties used to describe a volume, virtual disk,\n       LUN, or other logical storage entity for any system.\n    \"\"\"",
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "CapacityBytes": {
+      "Name": "CapacityBytes",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The size in bytes of this Volume\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "capacity_bytes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CapacityBytes\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "VolumeType": {
+      "Name": "VolumeType",
+      "Type": "Volume.v1_0_0.VolumeType",
+      "Description": "    \"\"\"The type of this volume\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "VolumeType",
+      "PythonVariableName": "volume_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VolumeType\")"
+    },
+    "Encrypted": {
+      "Name": "Encrypted",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Is this Volume encrypted\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "encrypted",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Encrypted\", adapter=bool)"
+    },
+    "EncryptionTypes": {
+      "Name": "EncryptionTypes",
+      "Type": "Collection(Volume.v1_0_0.EncryptionTypes)",
+      "Description": "    \"\"\"The types of encryption used by this Volume\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "EncryptionTypes",
+      "PythonVariableName": "encryption_types",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EncryptionTypes\")"
+    },
+    "Identifiers": {
+      "Name": "Identifiers",
+      "Type": "Collection(Resource.v1_1_0.Identifier)",
+      "Description": "    \"\"\"The Durable names for the volume\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Identifier",
+      "PythonVariableName": "identifiers",
+      "IsSubResource": false,
+      "Expression": "resource.IdentifierCollectionField(\"Identifiers\")"
+    },
+    "BlockSizeBytes": {
+      "Name": "BlockSizeBytes",
+      "Type": "Edm.Int32",
+      "Description": "    \"\"\"The size of the smallest addressible unit (Block) of this volume in\n       bytes\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int32",
+      "PythonVariableName": "block_size_bytes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"BlockSizeBytes\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Operations": {
+      "Name": "Operations",
+      "Type": "Collection(Volume.v1_0_0.Operations)",
+      "Description": "    \"\"\"The operations currently running on the Volume\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "Operations",
+      "PythonVariableName": "operations",
+      "IsSubResource": false,
+      "Expression": "OperationsCollectionField(\"Operations\")"
+    },
+    "OptimumIOSizeBytes": {
+      "Name": "OptimumIOSizeBytes",
+      "Type": "Edm.Int32",
+      "Description": "    \"\"\"The size in bytes of this Volume's optimum IO size.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int32",
+      "PythonVariableName": "optimum_io_size_bytes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"OptimumIOSizeBytes\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Volume.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Volume.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Volume.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Drives": {
+          "Name": "Drives",
+          "Type": "Collection(Drive.Drive)",
+          "Description": "    \"\"\"An array of references to the drives which contain this volume. This\n       will reference Drives that either wholly or only partly contain this\n       volume.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Drive",
+          "ModuleName": "Drive",
+          "PythonVariableName": "drives",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Drives\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Resource.v1_1_0.Identifier",
+    "Volume.v1_0_0.Operations"
+  ],
+  "collection_fields": [
+    {
+      "Name": "Operations",
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "Operations",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "OperationName": {
+          "Name": "OperationName",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The name of the operation.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "operation_name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"OperationName\")"
+        },
+        "PercentageComplete": {
+          "Name": "PercentageComplete",
+          "Type": "Edm.Int32",
+          "Description": "    \"\"\"The percentage of the operation that has been completed.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int32",
+          "PythonVariableName": "percentage_complete",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PercentageComplete\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "AssociatedTask": {
+          "Name": "AssociatedTask",
+          "Type": "Task.Task",
+          "Description": "    \"\"\"A reference to the task associated with the operation if any.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "Task",
+          "ModuleName": "Task",
+          "PythonVariableName": "associated_task",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AssociatedTask\", adapter=rsd_lib_utils.get_resource_identity)"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [
+    {
+      "Name": "Identifier",
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Identifier",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "DurableName": {
+          "Name": "DurableName",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This indicates the world wide, persistent name of the resource.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "durable_name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableName\")"
+        },
+        "DurableNameFormat": {
+          "Name": "DurableNameFormat",
+          "Type": "Resource.v1_1_0.DurableNameFormat",
+          "Description": "    \"\"\"This represents the format of the DurableName property.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource.v1_1_0",
+          "ModuleName": "DurableNameFormat",
+          "PythonVariableName": "durable_name_format",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableNameFormat\")"
+        }
+      }
+    }
+  ],
+  "links_fields": [],
+  "other_modules": [
+    "resource"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

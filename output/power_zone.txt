@@ -1,0 +1,364 @@
+{
+  "Name": "PowerZone",
+  "Namespace": "PowerZone.v1_0_0",
+  "ModuleName": "PowerZone",
+  "ElementType": "EntityType",
+  "BaseType": "Resource.v1_0_0.Resource",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "RackLocation": {
+      "Name": "RackLocation",
+      "Type": "RackLocation.RackLocation",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "RackLocation",
+      "ModuleName": "RackLocation",
+      "PythonVariableName": "rack_location",
+      "IsSubResource": false,
+      "Expression": "rack_location.RackLocationField(\"RackLocation\")"
+    },
+    "MaxPSUsSupported": {
+      "Name": "MaxPSUsSupported",
+      "Type": "Edm.Int64",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_ps_us_supported",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxPSUsSupported\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Presence": {
+      "Name": "Presence",
+      "Type": "Edm.String",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "presence",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Presence\")"
+    },
+    "NumberOfPSUsPresent": {
+      "Name": "NumberOfPSUsPresent",
+      "Type": "Edm.Int64",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "number_of_ps_us_present",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"NumberOfPSUsPresent\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "PowerConsumedWatts": {
+      "Name": "PowerConsumedWatts",
+      "Type": "Edm.Decimal",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "power_consumed_watts",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PowerConsumedWatts\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "PowerOutputWatts": {
+      "Name": "PowerOutputWatts",
+      "Type": "Edm.Decimal",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "power_output_watts",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PowerOutputWatts\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "PowerCapacityWatts": {
+      "Name": "PowerCapacityWatts",
+      "Type": "Edm.Decimal",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "power_capacity_watts",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PowerCapacityWatts\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "PowerSupplies": {
+      "Name": "PowerSupplies",
+      "Type": "Collection(PowerZone.v1_0_0.PowerSupply)",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "PowerZone.v1_0_0",
+      "ModuleName": "PowerSupply",
+      "PythonVariableName": "power_supplies",
+      "IsSubResource": false,
+      "Expression": "PowerSupplyCollectionField(\"PowerSupplies\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "PowerZone.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PowerZone.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "PowerZone.v1_0_0.Actions",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PowerZone.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "PowerZone.v1_0_0.Links",
+    "RackLocation.RackLocation"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "PowerZone.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {}
+    }
+  ],
+  "other_fields": [
+    {
+      "Name": "RackLocation",
+      "Namespace": "RackLocation",
+      "ModuleName": "RackLocation",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "RackUnits": {
+          "Name": "RackUnits",
+          "Type": "RackLocation.RackLocationUnit",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RackLocation",
+          "ModuleName": "RackLocationUnit",
+          "PythonVariableName": "rack_units",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"RackUnits\")"
+        },
+        "XLocation": {
+          "Name": "XLocation",
+          "Type": "Edm.Int64",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "x_location",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"XLocation\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "ULocation": {
+          "Name": "ULocation",
+          "Type": "Edm.Int64",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "u_location",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ULocation\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "UHeight": {
+          "Name": "UHeight",
+          "Type": "Edm.Int64",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "u_height",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"UHeight\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "PowerZone.v1_0_0.PowerSupply"
+  ],
+  "collection_fields": [
+    {
+      "Name": "PowerSupply",
+      "Namespace": "PowerZone.v1_0_0",
+      "ModuleName": "PowerSupply",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Name": {
+          "Name": "Name",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Name\")"
+        },
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        },
+        "RackLocation": {
+          "Name": "RackLocation",
+          "Type": "RackLocation.RackLocation",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RackLocation",
+          "ModuleName": "RackLocation",
+          "PythonVariableName": "rack_location",
+          "IsSubResource": true,
+          "Expression": "rack_location.RackLocationField(\"RackLocation\")"
+        },
+        "SerialNumber": {
+          "Name": "SerialNumber",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "serial_number",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SerialNumber\")"
+        },
+        "Manufacturer": {
+          "Name": "Manufacturer",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "manufacturer",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Manufacturer\")"
+        },
+        "ModelNumber": {
+          "Name": "ModelNumber",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "model_number",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ModelNumber\")"
+        },
+        "PartNumber": {
+          "Name": "PartNumber",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "part_number",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PartNumber\")"
+        },
+        "FirmwareRevision": {
+          "Name": "FirmwareRevision",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "firmware_revision",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"FirmwareRevision\")"
+        },
+        "PowerCapacityWatts": {
+          "Name": "PowerCapacityWatts",
+          "Type": "Edm.Decimal",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Decimal",
+          "PythonVariableName": "power_capacity_watts",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PowerCapacityWatts\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "LastPowerOutputWatts": {
+          "Name": "LastPowerOutputWatts",
+          "Type": "Edm.Decimal",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Decimal",
+          "PythonVariableName": "last_power_output_watts",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"LastPowerOutputWatts\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [
+    "rack_location"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

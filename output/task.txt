@@ -1,0 +1,196 @@
+{
+  "Name": "Task",
+  "Namespace": "Task.v1_0_2",
+  "ModuleName": "Task",
+  "ElementType": "EntityType",
+  "BaseType": "Task.v1_0_0.Task",
+  "IsReferenceableMember": false,
+  "Description": "       This resource contains information about a specific Task scheduled by\n       or being executed by a Redfish service's Task Service.\n    \"\"\"",
+  "Properties": {
+    "TaskState": {
+      "Name": "TaskState",
+      "Type": "Task.v1_0_0.TaskState",
+      "Description": "    \"\"\"The state of the task.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Task.v1_0_0",
+      "ModuleName": "TaskState",
+      "PythonVariableName": "task_state",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"TaskState\")"
+    },
+    "StartTime": {
+      "Name": "StartTime",
+      "Type": "Edm.DateTimeOffset",
+      "Description": "    \"\"\"The date-time stamp that the task was last started.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "DateTimeOffset",
+      "PythonVariableName": "start_time",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"StartTime\")"
+    },
+    "EndTime": {
+      "Name": "EndTime",
+      "Type": "Edm.DateTimeOffset",
+      "Description": "    \"\"\"The date-time stamp that the task was last completed.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "DateTimeOffset",
+      "PythonVariableName": "end_time",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EndTime\")"
+    },
+    "TaskStatus": {
+      "Name": "TaskStatus",
+      "Type": "Resource.Health",
+      "Description": "    \"\"\"This is the completion status of the task.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Health",
+      "PythonVariableName": "task_status",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"TaskStatus\")"
+    },
+    "Messages": {
+      "Name": "Messages",
+      "Type": "Collection(Message.v1_0_0.Message)",
+      "Description": "    \"\"\"This is an array of messages associated with the task.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Message.v1_0_0",
+      "ModuleName": "Message",
+      "PythonVariableName": "messages",
+      "IsSubResource": false,
+      "Expression": "message.MessageCollectionField(\"Messages\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Resource.Oem"
+  ],
+  "fields": [],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Message.v1_0_0.Message"
+  ],
+  "collection_fields": [],
+  "other_collection_fields": [
+    {
+      "Name": "Message",
+      "Namespace": "Message.v1_0_0",
+      "ModuleName": "Message",
+      "ElementType": "ComplexType",
+      "BaseType": "Message.Message",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "MessageId": {
+          "Name": "MessageId",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the key for this message which can be used to look up the\n       message in a message registry.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "message_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MessageId\")"
+        },
+        "Message": {
+          "Name": "Message",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the human readable message, if provided.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "message",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Message\")"
+        },
+        "RelatedProperties": {
+          "Name": "RelatedProperties",
+          "Type": "Collection(Edm.String)",
+          "Description": "    \"\"\"This is an array of properties described by the message.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "related_properties",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"RelatedProperties\")"
+        },
+        "MessageArgs": {
+          "Name": "MessageArgs",
+          "Type": "Collection(Edm.String)",
+          "Description": "    \"\"\"This array of message arguments are substituted for the arguments in\n       the message when looked up in the message registry.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "message_args",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MessageArgs\")"
+        },
+        "Severity": {
+          "Name": "Severity",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the severity of the errors.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "severity",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Severity\")"
+        },
+        "Resolution": {
+          "Name": "Resolution",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"Used to provide suggestions on how to resolve the situation that caused\n       the error.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "resolution",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Resolution\")"
+        },
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": "    \"\"\"Oem extension object.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        }
+      }
+    }
+  ],
+  "links_fields": [],
+  "other_modules": [
+    "message",
+    "resource"
+  ],
+  "IsCollectionExist": true
+}

@@ -1,0 +1,156 @@
+{
+  "Name": "PhysicalDrive",
+  "Namespace": "PhysicalDrive.v1_0_0",
+  "ModuleName": "PhysicalDrive",
+  "ElementType": "EntityType",
+  "BaseType": "Resource.v1_0_0.Resource",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "Interface": {
+      "Name": "Interface",
+      "Type": "PhysicalDrive.v1_0_0.Interface",
+      "Description": "    \"\"\"Controller interface\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PhysicalDrive.v1_0_0",
+      "ModuleName": "Interface",
+      "PythonVariableName": "interface",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Interface\")"
+    },
+    "CapacityGiB": {
+      "Name": "CapacityGiB",
+      "Type": "Edm.Decimal",
+      "Description": "    \"\"\"Drive capacity in GibiBytes.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "capacity_gi_b",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CapacityGiB\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Type": {
+      "Name": "Type",
+      "Type": "PhysicalDrive.v1_0_0.Type",
+      "Description": "    \"\"\"Type of drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PhysicalDrive.v1_0_0",
+      "ModuleName": "Type",
+      "PythonVariableName": "type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Type\")"
+    },
+    "RPM": {
+      "Name": "RPM",
+      "Type": "Edm.Int32",
+      "Description": "    \"\"\"For traditional drive, rotation per minute.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int32",
+      "PythonVariableName": "rpm",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"RPM\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Manufacturer": {
+      "Name": "Manufacturer",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Drive manufacturer name.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturer",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Manufacturer\")"
+    },
+    "Model": {
+      "Name": "Model",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Drive model\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "model",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Model\")"
+    },
+    "SerialNumber": {
+      "Name": "SerialNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Drive serial number\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "serial_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SerialNumber\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "PhysicalDrive.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PhysicalDrive.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "PhysicalDrive.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "PhysicalDrive.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "UsedBy": {
+          "Name": "UsedBy",
+          "Type": "Collection(LogicalDrive.v1_0_0.LogicalDrive)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "LogicalDrive.v1_0_0",
+          "ModuleName": "LogicalDrive",
+          "PythonVariableName": "used_by",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"UsedBy\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

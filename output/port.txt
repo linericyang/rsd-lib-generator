@@ -1,0 +1,224 @@
+{
+  "Name": "Port",
+  "Namespace": "Port.v1_0_0",
+  "ModuleName": "Port",
+  "ElementType": "EntityType",
+  "BaseType": "Port.Port",
+  "IsReferenceableMember": false,
+  "Description": "       Port contains properties describing a port of a switch.\n    \"\"\"",
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "PortId": {
+      "Name": "PortId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the label of this port on the physical switch package.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "port_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PortId\")"
+    },
+    "PortProtocol": {
+      "Name": "PortProtocol",
+      "Type": "Storage.v1_0_0.Protocol",
+      "Description": "    \"\"\"The protocol being sent over this port.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "port_protocol",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PortProtocol\")"
+    },
+    "PortType": {
+      "Name": "PortType",
+      "Type": "Port.v1_0_0.PortType",
+      "Description": "    \"\"\"This is the type of this port.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Port.v1_0_0",
+      "ModuleName": "PortType",
+      "PythonVariableName": "port_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PortType\")"
+    },
+    "CurrentSpeedGbps": {
+      "Name": "CurrentSpeedGbps",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The current speed of this port.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "current_speed_gbps",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CurrentSpeedGbps\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "MaxSpeedGbps": {
+      "Name": "MaxSpeedGbps",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The maximum speed of this port as currently configured.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_speed_gbps",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxSpeedGbps\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Width": {
+      "Name": "Width",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The number of lanes, phys, or other physical transport links that this\n       port contains.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "width",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Width\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Port.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Port.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Port.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Port.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Oem": {
+      "Name": "Oem",
+      "Description": "    \"\"\"Oem specific properties.\"\"\"",
+      "PythonVariableName": "oem",
+      "Expression": "OemField(\"Oem\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Port.v1_0_0.Links",
+    "Intel.Oem.Port"
+  ],
+  "fields": [
+    {
+      "Name": "Port",
+      "Namespace": "Intel.Oem",
+      "ModuleName": "IntelRackScale",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.OemObject",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "PCIeConnectionId": {
+          "Name": "PCIeConnectionId",
+          "Type": "Collection(Edm.String)",
+          "Description": "    \"\"\"An array of references to the PCIe connection identifiers (e.g. cable\n       ID).\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "pc_ie_connection_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PCIeConnectionId\")"
+        }
+      }
+    },
+    {
+      "Name": "Links",
+      "Namespace": "Port.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "AssociatedEndpoints": {
+          "Name": "AssociatedEndpoints",
+          "Type": "Collection(Endpoint.Endpoint)",
+          "Description": "    \"\"\"An array of references to the endpoints that connect to the switch\n       through this port.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Endpoint",
+          "ModuleName": "Endpoint",
+          "PythonVariableName": "associated_endpoints",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AssociatedEndpoints\", adapter=utils.get_members_identities)"
+        },
+        "ConnectedSwitches": {
+          "Name": "ConnectedSwitches",
+          "Type": "Collection(Switch.Switch)",
+          "Description": "    \"\"\"An array of references to the switches that connect to the switch\n       through this port.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Switch",
+          "ModuleName": "Switch",
+          "PythonVariableName": "connected_switches",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ConnectedSwitches\", adapter=utils.get_members_identities)"
+        },
+        "ConnectedSwitchPorts": {
+          "Name": "ConnectedSwitchPorts",
+          "Type": "Collection(Port.Port)",
+          "Description": "    \"\"\"An array of references to the ports that connect to the switch through\n       this port.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Port",
+          "ModuleName": "Port",
+          "PythonVariableName": "connected_switch_ports",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ConnectedSwitchPorts\", adapter=utils.get_members_identities)"
+        }
+      }
+    },
+    {
+      "Name": "Oem",
+      "ModuleName": "Oem",
+      "Description": null,
+      "Properties": {
+        "Intel_RackScale": {
+          "Name": "Intel_RackScale",
+          "Description": "    \"\"\"Intel Rack Scale Design specific properties.\"\"\"",
+          "PythonVariableName": "intel_rackscale",
+          "Expression": "IntelRackScaleField(\"Intel_RackScale\")"
+        }
+      },
+      "NavigationProperties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

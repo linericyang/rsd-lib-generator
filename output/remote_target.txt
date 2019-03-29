@@ -1,0 +1,349 @@
+{
+  "Name": "RemoteTarget",
+  "Namespace": "RemoteTarget.v1_1_0",
+  "ModuleName": "RemoteTarget",
+  "ElementType": "EntityType",
+  "BaseType": "RemoteTarget.v1_0_0.RemoteTarget",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Type": {
+      "Name": "Type",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Type of target\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Type\")"
+    },
+    "Addresses": {
+      "Name": "Addresses",
+      "Type": "Collection(RemoteTarget.v1_0_0.Address)",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "Address",
+      "PythonVariableName": "addresses",
+      "IsSubResource": false,
+      "Expression": "AddressCollectionField(\"Addresses\")"
+    },
+    "Initiator": {
+      "Name": "Initiator",
+      "Type": "Collection(RemoteTarget.v1_0_0.Initiator)",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "Initiator",
+      "PythonVariableName": "initiator",
+      "IsSubResource": false,
+      "Expression": "InitiatorCollectionField(\"Initiator\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "RemoteTarget.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "RemoteTarget.v1_0_0.Links",
+    "RemoteTarget.v1_0_0.iSCSIInitiator",
+    "RemoteTarget.v1_1_0.ISCSIAddress",
+    "RemoteTarget.v1_1_0.Chap"
+  ],
+  "fields": [
+    {
+      "Name": "iSCSIInitiator",
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "iSCSIInitiator",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "InitiatorIQN": {
+          "Name": "InitiatorIQN",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"IQN of iSCSI target initiator\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "initiator_iqn",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"InitiatorIQN\")"
+        }
+      }
+    },
+    {
+      "Name": "Chap",
+      "Namespace": "RemoteTarget.v1_1_0",
+      "ModuleName": "Chap",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Type": {
+          "Name": "Type",
+          "Type": "RemoteTarget.v1_1_0.ChapType",
+          "Description": "    \"\"\"CHAP parameters of iSCSI target.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RemoteTarget.v1_1_0",
+          "ModuleName": "ChapType",
+          "PythonVariableName": "type",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Type\")"
+        },
+        "Username": {
+          "Name": "Username",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"CHAP one way user name.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "username",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Username\")"
+        },
+        "Secret": {
+          "Name": "Secret",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"CHAP one way secret.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "secret",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Secret\")"
+        },
+        "MutualUsername": {
+          "Name": "MutualUsername",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"CHAP mutual user name.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "mutual_username",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MutualUsername\")"
+        },
+        "MutualSecret": {
+          "Name": "MutualSecret",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"CHAP mutual secret.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "mutual_secret",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MutualSecret\")"
+        }
+      }
+    },
+    {
+      "Name": "ISCSIAddress",
+      "Namespace": "RemoteTarget.v1_1_0",
+      "ModuleName": "ISCSIAddress",
+      "ElementType": "ComplexType",
+      "BaseType": "RemoteTarget.v1_0_0.ISCSIAddress",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "TargetLUN": {
+          "Name": "TargetLUN",
+          "Type": "Collection(RemoteTarget.v1_0_0.TargetLUN)",
+          "Description": "    \"\"\"Target Logical Unit\"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "RemoteTarget.v1_0_0",
+          "ModuleName": "TargetLUN",
+          "PythonVariableName": "target_lun",
+          "IsSubResource": true,
+          "Expression": "TargetLUNCollectionField(\"TargetLUN\")"
+        },
+        "TargetIQN": {
+          "Name": "TargetIQN",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"Target IQN\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "target_iqn",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"TargetIQN\")"
+        },
+        "TargetPortalIP": {
+          "Name": "TargetPortalIP",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"iSCSI target portal IP address\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "target_portal_ip",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"TargetPortalIP\")"
+        },
+        "TargetPortalPort": {
+          "Name": "TargetPortalPort",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"iSCSI target port\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "target_portal_port",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"TargetPortalPort\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "CHAP": {
+          "Name": "CHAP",
+          "Type": "RemoteTarget.v1_1_0.Chap",
+          "Description": "    \"\"\"CHAP parameters of iSCSI target.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RemoteTarget.v1_1_0",
+          "ModuleName": "Chap",
+          "PythonVariableName": "chap",
+          "IsSubResource": true,
+          "Expression": "ChapField(\"CHAP\")"
+        }
+      }
+    },
+    {
+      "Name": "Links",
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "RemoteTarget.v1_0_0.Address",
+    "RemoteTarget.v1_0_0.Initiator",
+    "RemoteTarget.v1_0_0.TargetLUN"
+  ],
+  "collection_fields": [
+    {
+      "Name": "TargetLUN",
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "TargetLUN",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "LUN": {
+          "Name": "LUN",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Logical unit number\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "lun",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"LUN\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "LogicalDrive": {
+          "Name": "LogicalDrive",
+          "Type": "LogicalDrive.v1_0_0.LogicalDrive",
+          "Description": "    \"\"\"Logical drive URI\"\"\"",
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "LogicalDrive.v1_0_0",
+          "ModuleName": "LogicalDrive",
+          "PythonVariableName": "logical_drive",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"LogicalDrive\", adapter=rsd_lib_utils.get_resource_identity)"
+        }
+      }
+    },
+    {
+      "Name": "Initiator",
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "Initiator",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "iSCSI": {
+          "Name": "iSCSI",
+          "Type": "RemoteTarget.v1_0_0.iSCSIInitiator",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RemoteTarget.v1_0_0",
+          "ModuleName": "iSCSIInitiator",
+          "PythonVariableName": "i_scsi",
+          "IsSubResource": true,
+          "Expression": "iSCSIInitiatorField(\"iSCSI\")"
+        }
+      }
+    },
+    {
+      "Name": "Address",
+      "Namespace": "RemoteTarget.v1_0_0",
+      "ModuleName": "Address",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "iSCSI": {
+          "Name": "iSCSI",
+          "Type": "RemoteTarget.v1_0_0.ISCSIAddress",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RemoteTarget.v1_0_0",
+          "ModuleName": "ISCSIAddress",
+          "PythonVariableName": "i_scsi",
+          "IsSubResource": true,
+          "Expression": "ISCSIAddressField(\"iSCSI\")"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

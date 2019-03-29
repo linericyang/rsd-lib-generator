@@ -1,0 +1,95 @@
+{
+  "Name": "MessageRegistry",
+  "Namespace": "MessageRegistry.v1_0_2",
+  "ModuleName": "MessageRegistry",
+  "ElementType": "EntityType",
+  "BaseType": "MessageRegistry.v1_0_0.MessageRegistry",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for all Message Registries.  It\n       represents the properties for the registries themselves.  The MessageId\n       is formed per the Redfish specification.  It consists of the\n       RegistryPrefix concatenated with the version concatenated with the\n       unique identifier for the message registry entry.\n    \"\"\"",
+  "Properties": {
+    "Language": {
+      "Name": "Language",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the RFC 5646 compliant language code for the registry.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "language",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Language\")"
+    },
+    "RegistryPrefix": {
+      "Name": "RegistryPrefix",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the single word prefix used to form a messageID structure.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "registry_prefix",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"RegistryPrefix\")"
+    },
+    "RegistryVersion": {
+      "Name": "RegistryVersion",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the message registry version which is used in the middle\n       portion of a messageID.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "registry_version",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"RegistryVersion\")"
+    },
+    "OwningEntity": {
+      "Name": "OwningEntity",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the organization or company that publishes this registry.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "owning_entity",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"OwningEntity\")"
+    },
+    "Messages": {
+      "Name": "Messages",
+      "Type": "MessageRegistry.v1_0_0.MessageProperty",
+      "Description": "    \"\"\"The pattern property indicates that a free-form string is the unique\n       identifier for the message within the registry.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "MessageRegistry.v1_0_0",
+      "ModuleName": "MessageProperty",
+      "PythonVariableName": "messages",
+      "IsSubResource": false,
+      "Expression": "MessagePropertyField(\"Messages\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "MessageRegistry.v1_0_0.MessageProperty"
+  ],
+  "fields": [
+    {
+      "Name": "MessageProperty",
+      "Namespace": "MessageRegistry.v1_0_0",
+      "ModuleName": "MessageProperty",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

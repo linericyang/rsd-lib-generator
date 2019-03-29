@@ -1,0 +1,296 @@
+{
+  "Name": "Processor",
+  "Namespace": "Processor.v1_0_2",
+  "ModuleName": "Processor",
+  "ElementType": "EntityType",
+  "BaseType": "Processor.v1_0_0.Processor",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for the Processor resource.  It\n       represents the properties of a processor attached to a System.\n    \"\"\"",
+  "Properties": {
+    "Socket": {
+      "Name": "Socket",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The socket or location of the processor\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "socket",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Socket\")"
+    },
+    "ProcessorType": {
+      "Name": "ProcessorType",
+      "Type": "Processor.v1_0_0.ProcessorType",
+      "Description": "    \"\"\"The type of processor\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Processor.v1_0_0",
+      "ModuleName": "ProcessorType",
+      "PythonVariableName": "processor_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ProcessorType\")"
+    },
+    "ProcessorArchitecture": {
+      "Name": "ProcessorArchitecture",
+      "Type": "Processor.v1_0_0.ProcessorArchitecture",
+      "Description": "    \"\"\"The architecture of the processor\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Processor.v1_0_0",
+      "ModuleName": "ProcessorArchitecture",
+      "PythonVariableName": "processor_architecture",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ProcessorArchitecture\")"
+    },
+    "InstructionSet": {
+      "Name": "InstructionSet",
+      "Type": "Processor.v1_0_0.InstructionSet",
+      "Description": "    \"\"\"The instruction set of the processor\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Processor.v1_0_0",
+      "ModuleName": "InstructionSet",
+      "PythonVariableName": "instruction_set",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"InstructionSet\")"
+    },
+    "ProcessorId": {
+      "Name": "ProcessorId",
+      "Type": "Processor.v1_0_0.ProcessorId",
+      "Description": "    \"\"\"Identification information for this processor.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Processor.v1_0_0",
+      "ModuleName": "ProcessorId",
+      "PythonVariableName": "processor_id",
+      "IsSubResource": false,
+      "Expression": "ProcessorIdField(\"ProcessorId\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Manufacturer": {
+      "Name": "Manufacturer",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The processor manufacturer\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturer",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Manufacturer\")"
+    },
+    "Model": {
+      "Name": "Model",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The product model number of this device\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "model",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Model\")"
+    },
+    "MaxSpeedMHz": {
+      "Name": "MaxSpeedMHz",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The maximum clock speed of the processor\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_speed_m_hz",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxSpeedMHz\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "TotalCores": {
+      "Name": "TotalCores",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The total number of cores contained in this processor\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "total_cores",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"TotalCores\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "TotalThreads": {
+      "Name": "TotalThreads",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The total number of execution threads supported by this processor\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "total_threads",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"TotalThreads\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Oem": {
+      "Name": "Oem",
+      "Description": "    \"\"\"Oem specific properties.\"\"\"",
+      "PythonVariableName": "oem",
+      "Expression": "OemField(\"Oem\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Processor.v1_0_0.ProcessorId",
+    "Intel.Oem.Processor"
+  ],
+  "fields": [
+    {
+      "Name": "Processor",
+      "Namespace": "Intel.Oem",
+      "ModuleName": "IntelRackScale",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.OemObject",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Brand": {
+          "Name": "Brand",
+          "Type": "Intel.Oem.ProcessorBrand",
+          "Description": "    \"\"\"This indicates processor brand\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Intel.Oem",
+          "ModuleName": "ProcessorBrand",
+          "PythonVariableName": "brand",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Brand\")"
+        },
+        "Capabilities": {
+          "Name": "Capabilities",
+          "Type": "Collection(Edm.String)",
+          "Description": "    \"\"\"This indicates array of processor capabilities\"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "capabilities",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Capabilities\")"
+        }
+      }
+    },
+    {
+      "Name": "ProcessorId",
+      "Namespace": "Processor.v1_0_0",
+      "ModuleName": "ProcessorId",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "VendorId": {
+          "Name": "VendorId",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Vendor Identification for this processor\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "vendor_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"VendorId\")"
+        },
+        "IdentificationRegisters": {
+          "Name": "IdentificationRegisters",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The contents of the Identification Registers (CPUID) for this processor\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "identification_registers",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"IdentificationRegisters\")"
+        },
+        "EffectiveFamily": {
+          "Name": "EffectiveFamily",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The effective Family for this processor\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "effective_family",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"EffectiveFamily\")"
+        },
+        "EffectiveModel": {
+          "Name": "EffectiveModel",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The effective Model for this processor\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "effective_model",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"EffectiveModel\")"
+        },
+        "Step": {
+          "Name": "Step",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Step value for this processor\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "step",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Step\")"
+        },
+        "MicrocodeInfo": {
+          "Name": "MicrocodeInfo",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Microcode Information for this processor\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "microcode_info",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MicrocodeInfo\")"
+        }
+      }
+    },
+    {
+      "Name": "Oem",
+      "ModuleName": "Oem",
+      "Description": null,
+      "Properties": {
+        "Intel_RackScale": {
+          "Name": "Intel_RackScale",
+          "Description": "    \"\"\"Intel Rack Scale Design specific properties.\"\"\"",
+          "PythonVariableName": "intel_rackscale",
+          "Expression": "IntelRackScaleField(\"Intel_RackScale\")"
+        }
+      },
+      "NavigationProperties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

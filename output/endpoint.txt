@@ -1,0 +1,412 @@
+{
+  "Name": "Endpoint",
+  "Namespace": "Endpoint.v1_0_0",
+  "ModuleName": "Endpoint",
+  "ElementType": "EntityType",
+  "BaseType": "Endpoint.Endpoint",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for the Endpoint resource. It represents\n       the properties of an entity that sends or receives protocol defined\n       messages over a transport.\n    \"\"\"",
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "EndpointProtocol": {
+      "Name": "EndpointProtocol",
+      "Type": "Storage.v1_0_0.Protocol",
+      "Description": "    \"\"\"The protocol supported by this endpoint.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "endpoint_protocol",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EndpointProtocol\")"
+    },
+    "ConnectedEntities": {
+      "Name": "ConnectedEntities",
+      "Type": "Collection(Endpoint.v1_0_0.ConnectedEntity)",
+      "Description": "    \"\"\"All the entities connected to this endpoint.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Endpoint.v1_0_0",
+      "ModuleName": "ConnectedEntity",
+      "PythonVariableName": "connected_entities",
+      "IsSubResource": false,
+      "Expression": "ConnectedEntityCollectionField(\"ConnectedEntities\")"
+    },
+    "Identifiers": {
+      "Name": "Identifiers",
+      "Type": "Collection(Resource.v1_1_0.Identifier)",
+      "Description": "    \"\"\"Identifiers for this endpoint\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Identifier",
+      "PythonVariableName": "identifiers",
+      "IsSubResource": false,
+      "Expression": "resource.IdentifierCollectionField(\"Identifiers\")"
+    },
+    "PciId": {
+      "Name": "PciId",
+      "Type": "Endpoint.v1_0_0.PciId",
+      "Description": "    \"\"\"The PCI ID of the endpoint.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Endpoint.v1_0_0",
+      "ModuleName": "PciId",
+      "PythonVariableName": "pci_id",
+      "IsSubResource": false,
+      "Expression": "PciIdField(\"PciId\")"
+    },
+    "HostReservationMemoryBytes": {
+      "Name": "HostReservationMemoryBytes",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The amount of memory in Bytes that the Host should allocate to connect\n       to this endpoint.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "host_reservation_memory_bytes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"HostReservationMemoryBytes\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Endpoint.v1_0_0.Links",
+      "Description": "    \"\"\"The links object contains the links to other resources that are related\n       to this resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Endpoint.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Endpoint.v1_0_0.Actions",
+      "Description": "    \"\"\"The Actions object contains the available custom actions on this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Endpoint.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Redundancy": {
+      "Name": "Redundancy",
+      "Type": "Collection(Redundancy.Redundancy)",
+      "Description": "    \"\"\"Redundancy information for the lower level endpoints supporting this\n       endpoint\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "PythonVariableName": "redundancy",
+      "IsSubResource": false,
+      "Expression": "redundancy.RedundancyCollectionField(\"Redundancy\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Endpoint.v1_0_0.PciId",
+    "Resource.Oem",
+    "Endpoint.v1_0_0.Links",
+    "Resource.Resource"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "Endpoint.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "MutuallyExclusiveEndpoints": {
+          "Name": "MutuallyExclusiveEndpoints",
+          "Type": "Collection(Endpoint.Endpoint)",
+          "Description": "    \"\"\"An array of references to the endpoints that may not be used in zones\n       if this endpoint is used in a zone.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Endpoint",
+          "ModuleName": "Endpoint",
+          "PythonVariableName": "mutually_exclusive_endpoints",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MutuallyExclusiveEndpoints\", adapter=utils.get_members_identities)"
+        },
+        "Ports": {
+          "Name": "Ports",
+          "Type": "Collection(Port.Port)",
+          "Description": "    \"\"\"An array of references to the the physical ports associated with this\n       endpoint.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Port",
+          "ModuleName": "Port",
+          "PythonVariableName": "ports",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Ports\", adapter=utils.get_members_identities)"
+        }
+      }
+    },
+    {
+      "Name": "PciId",
+      "Namespace": "Endpoint.v1_0_0",
+      "ModuleName": "PciId",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "DeviceId": {
+          "Name": "DeviceId",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Device ID of this PCIe function.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "device_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DeviceId\")"
+        },
+        "VendorId": {
+          "Name": "VendorId",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Vendor ID of this PCIe function.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "vendor_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"VendorId\")"
+        },
+        "SubsystemId": {
+          "Name": "SubsystemId",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Subsystem ID of this PCIe function.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "subsystem_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SubsystemId\")"
+        },
+        "SubsystemVendorId": {
+          "Name": "SubsystemVendorId",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Subsystem Vendor ID of this PCIe function.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "subsystem_vendor_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SubsystemVendorId\")"
+        }
+      }
+    }
+  ],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    },
+    {
+      "Name": "Resource",
+      "Namespace": "Resource",
+      "ModuleName": "Resource",
+      "ElementType": "EntityType",
+      "BaseType": "Resource.Item",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {}
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Resource.v1_1_0.Identifier",
+    "Redundancy.Redundancy",
+    "Endpoint.v1_0_0.ConnectedEntity"
+  ],
+  "collection_fields": [
+    {
+      "Name": "ConnectedEntity",
+      "Namespace": "Endpoint.v1_0_0",
+      "ModuleName": "ConnectedEntity",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Represents a remote resource that is connected to the network\n       accessible to this endpoint.\n    \"\"\"",
+      "Properties": {
+        "EntityType": {
+          "Name": "EntityType",
+          "Type": "Endpoint.v1_0_0.EntityType",
+          "Description": "    \"\"\"The type of the connected entity.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Endpoint.v1_0_0",
+          "ModuleName": "EntityType",
+          "PythonVariableName": "entity_type",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"EntityType\")"
+        },
+        "EntityRole": {
+          "Name": "EntityRole",
+          "Type": "Endpoint.v1_0_0.EntityRole",
+          "Description": "    \"\"\"The role of the connected entity.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Endpoint.v1_0_0",
+          "ModuleName": "EntityRole",
+          "PythonVariableName": "entity_role",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"EntityRole\")"
+        },
+        "EntityPciId": {
+          "Name": "EntityPciId",
+          "Type": "Endpoint.v1_0_0.PciId",
+          "Description": "    \"\"\"The PCI ID of the connected entity.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Endpoint.v1_0_0",
+          "ModuleName": "PciId",
+          "PythonVariableName": "entity_pci_id",
+          "IsSubResource": true,
+          "Expression": "PciIdField(\"EntityPciId\")"
+        },
+        "PciFunctionNumber": {
+          "Name": "PciFunctionNumber",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"The PCI ID of the connected entity.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "pci_function_number",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PciFunctionNumber\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "PciClassCode": {
+          "Name": "PciClassCode",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The Class Code and Subclass code of this PCIe function.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "pci_class_code",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PciClassCode\")"
+        },
+        "Identifiers": {
+          "Name": "Identifiers",
+          "Type": "Collection(Resource.v1_1_0.Identifier)",
+          "Description": "    \"\"\"Identifiers for the remote entity.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Resource.v1_1_0",
+          "ModuleName": "Identifier",
+          "PythonVariableName": "identifiers",
+          "IsSubResource": true,
+          "Expression": "resource.IdentifierCollectionField(\"Identifiers\")"
+        },
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        },
+        "EntityLink": {
+          "Name": "EntityLink",
+          "Type": "Resource.Resource",
+          "Description": "    \"\"\"A link to the associated entity.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Resource",
+          "PythonVariableName": "entity_link",
+          "IsSubResource": true,
+          "Expression": "resource.ResourceField(\"EntityLink\")"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [
+    {
+      "Name": "Redundancy",
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "ElementType": "EntityType",
+      "BaseType": "Resource.v1_0_0.ReferenceableMember",
+      "IsReferenceableMember": true,
+      "Description": "       This is the common redundancy definition and structure used in other\n       Redfish schemas.\n    \"\"\"",
+      "Properties": {}
+    },
+    {
+      "Name": "Identifier",
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Identifier",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "DurableName": {
+          "Name": "DurableName",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This indicates the world wide, persistent name of the resource.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "durable_name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableName\")"
+        },
+        "DurableNameFormat": {
+          "Name": "DurableNameFormat",
+          "Type": "Resource.v1_1_0.DurableNameFormat",
+          "Description": "    \"\"\"This represents the format of the DurableName property.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource.v1_1_0",
+          "ModuleName": "DurableNameFormat",
+          "PythonVariableName": "durable_name_format",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableNameFormat\")"
+        }
+      }
+    }
+  ],
+  "links_fields": [],
+  "other_modules": [
+    "resource",
+    "redundancy"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

@@ -1,0 +1,204 @@
+{
+  "Name": "LogicalDrive",
+  "Namespace": "LogicalDrive.v1_0_0",
+  "ModuleName": "LogicalDrive",
+  "ElementType": "EntityType",
+  "BaseType": "Resource.v1_0_0.Resource",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "Type": {
+      "Name": "Type",
+      "Type": "LogicalDrive.v1_0_0.Type",
+      "Description": "    \"\"\"Type of volume\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogicalDrive.v1_0_0",
+      "ModuleName": "Type",
+      "PythonVariableName": "type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Type\")"
+    },
+    "Mode": {
+      "Name": "Mode",
+      "Type": "LogicalDrive.v1_0_0.Mode",
+      "Description": "    \"\"\"Mode defines how the logical drive is built on top of underlying\n       physical/logical drives. The value shall correspond to the logical\n       drive type.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogicalDrive.v1_0_0",
+      "ModuleName": "Mode",
+      "PythonVariableName": "mode",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Mode\")"
+    },
+    "Protected": {
+      "Name": "Protected",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Write (modify) protection state.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "protected",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Protected\", adapter=bool)"
+    },
+    "CapacityGiB": {
+      "Name": "CapacityGiB",
+      "Type": "Edm.Decimal",
+      "Description": "    \"\"\"Drive capacity in GibiBytes.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "capacity_gi_b",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CapacityGiB\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Image": {
+      "Name": "Image",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Image name.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "image",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Image\")"
+    },
+    "Bootable": {
+      "Name": "Bootable",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Specify if target is bootable.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "bootable",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Bootable\", adapter=bool)"
+    },
+    "Snapshot": {
+      "Name": "Snapshot",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Indicates if the logical drive should be created as a snapshot of the\n       source master drive, or should be created as a full copy of an image\n       from the source master drive.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "snapshot",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Snapshot\", adapter=bool)"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "LogicalDrive.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogicalDrive.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "LogicalDrive.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "LogicalDrive.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "LogicalDrives": {
+          "Name": "LogicalDrives",
+          "Type": "Collection(LogicalDrive.v1_0_0.LogicalDrive)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "LogicalDrive.v1_0_0",
+          "ModuleName": "LogicalDrive",
+          "PythonVariableName": "logical_drives",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"LogicalDrives\", adapter=utils.get_members_identities)"
+        },
+        "PhysicalDrives": {
+          "Name": "PhysicalDrives",
+          "Type": "Collection(PhysicalDrive.v1_0_0.PhysicalDrive)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "PhysicalDrive.v1_0_0",
+          "ModuleName": "PhysicalDrive",
+          "PythonVariableName": "physical_drives",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PhysicalDrives\", adapter=utils.get_members_identities)"
+        },
+        "MasterDrive": {
+          "Name": "MasterDrive",
+          "Type": "LogicalDrive.v1_0_0.LogicalDrive",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "LogicalDrive.v1_0_0",
+          "ModuleName": "LogicalDrive",
+          "PythonVariableName": "master_drive",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MasterDrive\", adapter=rsd_lib_utils.get_resource_identity)"
+        },
+        "UsedBy": {
+          "Name": "UsedBy",
+          "Type": "Collection(LogicalDrive.v1_0_0.LogicalDrive)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "LogicalDrive.v1_0_0",
+          "ModuleName": "LogicalDrive",
+          "PythonVariableName": "used_by",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"UsedBy\", adapter=utils.get_members_identities)"
+        },
+        "Targets": {
+          "Name": "Targets",
+          "Type": "Collection(RemoteTarget.v1_0_0.RemoteTarget)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "RemoteTarget.v1_0_0",
+          "ModuleName": "RemoteTarget",
+          "PythonVariableName": "targets",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Targets\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

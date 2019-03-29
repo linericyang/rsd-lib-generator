@@ -1,0 +1,132 @@
+{
+  "Name": "Fabric",
+  "Namespace": "Fabric.v1_0_0",
+  "ModuleName": "Fabric",
+  "ElementType": "EntityType",
+  "BaseType": "Fabric.Fabric",
+  "IsReferenceableMember": false,
+  "Description": "       Fabric contains properties describing a simple fabric consisting of one\n       or more switches, zero or more endpoints, and zero or more zones.\n    \"\"\"",
+  "Properties": {
+    "FabricType": {
+      "Name": "FabricType",
+      "Type": "Storage.v1_0_0.Protocol",
+      "Description": "    \"\"\"The protocol being sent over this fabric.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "fabric_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FabricType\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "MaxZones": {
+      "Name": "MaxZones",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The value of this property shall contain the maximum number of zones\n       the switch can currently configure.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_zones",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxZones\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Fabric.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Fabric.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Fabric.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Fabric.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Fabric.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "Fabric.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "Zones",
+      "Type": "ZoneCollection.ZoneCollection",
+      "Description": "    \"\"\"A collection of references to the zones contained in this fabric.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "ZoneCollection",
+      "ModuleName": "ZoneCollection",
+      "PythonVariableName": "zones",
+      "IsSubResource": false,
+      "PythonModuleName": "zone"
+    },
+    {
+      "Name": "Endpoints",
+      "Type": "EndpointCollection.EndpointCollection",
+      "Description": "    \"\"\"A collection of references to the endpoints contained in this fabric.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "EndpointCollection",
+      "ModuleName": "EndpointCollection",
+      "PythonVariableName": "endpoints",
+      "IsSubResource": false,
+      "PythonModuleName": "endpoint"
+    },
+    {
+      "Name": "Switches",
+      "Type": "SwitchCollection.SwitchCollection",
+      "Description": "    \"\"\"A collection of references to the switches contained in this fabric.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "SwitchCollection",
+      "ModuleName": "SwitchCollection",
+      "PythonVariableName": "switches",
+      "IsSubResource": false,
+      "PythonModuleName": "switch"
+    }
+  ],
+  "other_modules": [],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

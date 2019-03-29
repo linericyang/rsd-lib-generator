@@ -1,0 +1,85 @@
+{
+  "Name": "EthernetSwitchACL",
+  "Namespace": "EthernetSwitchACL.v1_0_0",
+  "ModuleName": "EthernetSwitchACL",
+  "ElementType": "EntityType",
+  "BaseType": "EthernetSwitchACL.EthernetSwitchACL",
+  "IsReferenceableMember": false,
+  "Description": "       A Ethernet Switch ACL represents Access Control List for switch.\n    \"\"\"",
+  "Properties": {
+    "Links": {
+      "Name": "Links",
+      "Type": "EthernetSwitchACL.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchACL.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "EthernetSwitchACL.v1_0_0.Actions",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchACL.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "EthernetSwitchACL.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "EthernetSwitchACL.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "BoundPorts": {
+          "Name": "BoundPorts",
+          "Type": "Collection(EthernetSwitchPort.EthernetSwitchPort)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "EthernetSwitchPort",
+          "ModuleName": "EthernetSwitchPort",
+          "PythonVariableName": "bound_ports",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"BoundPorts\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "Rules",
+      "Type": "EthernetSwitchACLRuleCollection.EthernetSwitchACLRuleCollection",
+      "Description": null,
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchACLRuleCollection",
+      "ModuleName": "EthernetSwitchACLRuleCollection",
+      "PythonVariableName": "rules",
+      "IsSubResource": false,
+      "PythonModuleName": "ethernet_switch_acl_rule"
+    }
+  ],
+  "other_modules": [],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

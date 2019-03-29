@@ -1,0 +1,546 @@
+{
+  "Name": "EthernetSwitchPort",
+  "Namespace": "EthernetSwitchPort.v1_0_0",
+  "ModuleName": "EthernetSwitchPort",
+  "ElementType": "EntityType",
+  "BaseType": "EthernetSwitchPort.EthernetSwitchPort",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "PortId": {
+      "Name": "PortId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Switch port unique identifier.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "port_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PortId\")"
+    },
+    "LinkType": {
+      "Name": "LinkType",
+      "Type": "EthernetSwitchPort.v1_0_0.LinkType",
+      "Description": "    \"\"\"Type of port link\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "LinkType",
+      "PythonVariableName": "link_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"LinkType\")"
+    },
+    "OperationalState": {
+      "Name": "OperationalState",
+      "Type": "EthernetSwitchPort.v1_0_0.OperationalState",
+      "Description": "    \"\"\"Port link operational state\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "OperationalState",
+      "PythonVariableName": "operational_state",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"OperationalState\")"
+    },
+    "AdministrativeState": {
+      "Name": "AdministrativeState",
+      "Type": "EthernetSwitchPort.v1_0_0.AdministrativeState",
+      "Description": "    \"\"\"Port link state forced by user.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "AdministrativeState",
+      "PythonVariableName": "administrative_state",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"AdministrativeState\")"
+    },
+    "LinkSpeedMbps": {
+      "Name": "LinkSpeedMbps",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"Port speed\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "link_speed_mbps",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"LinkSpeedMbps\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "NeighborInfo": {
+      "Name": "NeighborInfo",
+      "Type": "EthernetSwitchPort.v1_0_0.NeighborInfo",
+      "Description": "    \"\"\"For Upstream port type this property provide information about neighbor\n       switch (and switch port if available) connected to this port\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "NeighborInfo",
+      "PythonVariableName": "neighbor_info",
+      "IsSubResource": false,
+      "Expression": "NeighborInfoField(\"NeighborInfo\")"
+    },
+    "NeighborMAC": {
+      "Name": "NeighborMAC",
+      "Type": "EthernetInterface.v1_0_0.MACAddress",
+      "Description": "    \"\"\"For Downstream port type this property provide MAC address of NIC\n       connected to this port.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetInterface.v1_0_0",
+      "ModuleName": "MACAddress",
+      "PythonVariableName": "neighbor_mac",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"NeighborMAC\")"
+    },
+    "FrameSize": {
+      "Name": "FrameSize",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"MAC frame size in bytes\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "frame_size",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FrameSize\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Autosense": {
+      "Name": "Autosense",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Indicates if the speed and duplex is automatically configured by the NIC\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "autosense",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Autosense\", adapter=bool)"
+    },
+    "FullDuplex": {
+      "Name": "FullDuplex",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Indicates if port is in Full Duplex mode or not\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "full_duplex",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FullDuplex\", adapter=bool)"
+    },
+    "MACAddress": {
+      "Name": "MACAddress",
+      "Type": "EthernetInterface.v1_0_0.MACAddress",
+      "Description": "    \"\"\"MAC address of port.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetInterface.v1_0_0",
+      "ModuleName": "MACAddress",
+      "PythonVariableName": "mac_address",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MACAddress\")"
+    },
+    "IPv4Addresses": {
+      "Name": "IPv4Addresses",
+      "Type": "Collection(IPAddresses.v1_0_0.IPv4Address)",
+      "Description": "    \"\"\"Array of following IPv4 address\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv4Address",
+      "PythonVariableName": "i_pv4_addresses",
+      "IsSubResource": false,
+      "Expression": "ip_addresses.IPv4AddressCollectionField(\"IPv4Addresses\")"
+    },
+    "IPv6Addresses": {
+      "Name": "IPv6Addresses",
+      "Type": "Collection(IPAddresses.v1_0_0.IPv6Address)",
+      "Description": "    \"\"\"Array of following IPv6 address\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv6Address",
+      "PythonVariableName": "i_pv6_addresses",
+      "IsSubResource": false,
+      "Expression": "ip_addresses.IPv6AddressCollectionField(\"IPv6Addresses\")"
+    },
+    "PortClass": {
+      "Name": "PortClass",
+      "Type": "EthernetSwitchPort.v1_0_0.PortClass",
+      "Description": "    \"\"\"Port class\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "PortClass",
+      "PythonVariableName": "port_class",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PortClass\")"
+    },
+    "PortMode": {
+      "Name": "PortMode",
+      "Type": "EthernetSwitchPort.v1_0_0.PortMode",
+      "Description": "    \"\"\"Port working mode. The value shall correspond to the port class\n       (especially to the logical port definition).\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "PortMode",
+      "PythonVariableName": "port_mode",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PortMode\")"
+    },
+    "PortType": {
+      "Name": "PortType",
+      "Type": "EthernetSwitchPort.v1_0_0.PortType",
+      "Description": "    \"\"\"PortType\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "PortType",
+      "PythonVariableName": "port_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PortType\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "EthernetSwitchPort.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "EthernetSwitchPort.v1_0_0.Links",
+    "Resource.Oem",
+    "EthernetSwitchPort.v1_0_0.NeighborInfo"
+  ],
+  "fields": [
+    {
+      "Name": "NeighborInfo",
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "NeighborInfo",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "SwitchId": {
+          "Name": "SwitchId",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "switch_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SwitchId\")"
+        },
+        "PortId": {
+          "Name": "PortId",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "port_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PortId\")"
+        },
+        "CableId": {
+          "Name": "CableId",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "cable_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"CableId\")"
+        }
+      }
+    },
+    {
+      "Name": "Links",
+      "Namespace": "EthernetSwitchPort.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "PrimaryVLAN": {
+          "Name": "PrimaryVLAN",
+          "Type": "VLanNetworkInterface.v1_0_0.VLanNetworkInterface",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "VLanNetworkInterface.v1_0_0",
+          "ModuleName": "VLanNetworkInterface",
+          "PythonVariableName": "primary_vlan",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PrimaryVLAN\", adapter=rsd_lib_utils.get_resource_identity)"
+        },
+        "Switch": {
+          "Name": "Switch",
+          "Type": "EthernetSwitch.v1_0_0.EthernetSwitch",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "EthernetSwitch.v1_0_0",
+          "ModuleName": "EthernetSwitch",
+          "PythonVariableName": "switch",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Switch\", adapter=rsd_lib_utils.get_resource_identity)"
+        },
+        "MemberOfPort": {
+          "Name": "MemberOfPort",
+          "Type": "EthernetSwitchPort.v1_0_0.EthernetSwitchPort",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "EthernetSwitchPort.v1_0_0",
+          "ModuleName": "EthernetSwitchPort",
+          "PythonVariableName": "member_of_port",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MemberOfPort\", adapter=rsd_lib_utils.get_resource_identity)"
+        },
+        "PortMembers": {
+          "Name": "PortMembers",
+          "Type": "Collection(EthernetSwitchPort.v1_0_0.EthernetSwitchPort)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "EthernetSwitchPort.v1_0_0",
+          "ModuleName": "EthernetSwitchPort",
+          "PythonVariableName": "port_members",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PortMembers\", adapter=utils.get_members_identities)"
+        },
+        "ActiveACLs": {
+          "Name": "ActiveACLs",
+          "Type": "Collection(EthernetSwitchACL.v1_0_0.EthernetSwitchACL)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "EthernetSwitchACL.v1_0_0",
+          "ModuleName": "EthernetSwitchACL",
+          "PythonVariableName": "active_ac_ls",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ActiveACLs\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "IPAddresses.v1_0_0.IPv4Address",
+    "IPAddresses.v1_0_0.IPv6Address"
+  ],
+  "collection_fields": [],
+  "other_collection_fields": [
+    {
+      "Name": "IPv6Address",
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv6Address",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        },
+        "Address": {
+          "Name": "Address",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the IPv6 Address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "address",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Address\")"
+        },
+        "PrefixLength": {
+          "Name": "PrefixLength",
+          "Type": "IPAddresses.v1_0_0.PrefixLength",
+          "Description": "    \"\"\"This is the IPv6 Address Prefix Length.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "PrefixLength",
+          "PythonVariableName": "prefix_length",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PrefixLength\")"
+        },
+        "AddressOrigin": {
+          "Name": "AddressOrigin",
+          "Type": "IPAddresses.v1_0_0.IPv6AddressOrigin",
+          "Description": "    \"\"\"This indicates how the address was determined.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "IPv6AddressOrigin",
+          "PythonVariableName": "address_origin",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AddressOrigin\")"
+        },
+        "AddressState": {
+          "Name": "AddressState",
+          "Type": "IPAddresses.v1_0_0.AddressState",
+          "Description": "    \"\"\"The current state of this address as defined in RFC 4862.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "AddressState",
+          "PythonVariableName": "address_state",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AddressState\")"
+        }
+      }
+    },
+    {
+      "Name": "IPv4Address",
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv4Address",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        },
+        "Address": {
+          "Name": "Address",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the IPv4 Address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "address",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Address\")"
+        },
+        "SubnetMask": {
+          "Name": "SubnetMask",
+          "Type": "IPAddresses.v1_0_0.SubnetMask",
+          "Description": "    \"\"\"This is the IPv4 Subnet mask.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "SubnetMask",
+          "PythonVariableName": "subnet_mask",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SubnetMask\")"
+        },
+        "AddressOrigin": {
+          "Name": "AddressOrigin",
+          "Type": "IPAddresses.v1_0_0.IPv4AddressOrigin",
+          "Description": "    \"\"\"This indicates how the address was determined.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "IPv4AddressOrigin",
+          "PythonVariableName": "address_origin",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AddressOrigin\")"
+        },
+        "Gateway": {
+          "Name": "Gateway",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the IPv4 gateway for this address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "gateway",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Gateway\")"
+        }
+      }
+    }
+  ],
+  "links_fields": [
+    {
+      "Name": "VLANs",
+      "Type": "VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection",
+      "Description": null,
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "VLanNetworkInterfaceCollection",
+      "ModuleName": "VLanNetworkInterfaceCollection",
+      "PythonVariableName": "vla_ns",
+      "IsSubResource": false,
+      "PythonModuleName": "v_lan_network_interface"
+    },
+    {
+      "Name": "StaticMACs",
+      "Type": "EthernetSwitchStaticMACCollection.EthernetSwitchStaticMACCollection",
+      "Description": null,
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchStaticMACCollection",
+      "ModuleName": "EthernetSwitchStaticMACCollection",
+      "PythonVariableName": "static_ma_cs",
+      "IsSubResource": false,
+      "PythonModuleName": "ethernet_switch_static_mac"
+    }
+  ],
+  "other_modules": [
+    "ip_addresses",
+    "resource"
+  ],
+  "IsCollectionExist": true
+}

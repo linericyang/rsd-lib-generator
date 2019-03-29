@@ -1,0 +1,649 @@
+{
+  "Name": "Drive",
+  "Namespace": "Drive.v1_1_1",
+  "ModuleName": "Drive",
+  "ElementType": "EntityType",
+  "BaseType": "Drive.v1_1_0.Drive",
+  "IsReferenceableMember": false,
+  "Description": "       Drive contains properties describing a single physical disk drive for\n       any system, along with links to associated Volumes.\n    \"\"\"",
+  "Properties": {
+    "StatusIndicator": {
+      "Name": "StatusIndicator",
+      "Type": "Drive.v1_0_0.StatusIndicator",
+      "Description": "    \"\"\"The state of the status indicator, used to communicate status\n       information about this drive.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Drive.v1_0_0",
+      "ModuleName": "StatusIndicator",
+      "PythonVariableName": "status_indicator",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"StatusIndicator\")"
+    },
+    "IndicatorLED": {
+      "Name": "IndicatorLED",
+      "Type": "Resource.v1_1_0.IndicatorLED",
+      "Description": "    \"\"\"The state of the indicator LED, used to identify the drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "IndicatorLED",
+      "PythonVariableName": "indicator_led",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"IndicatorLED\")"
+    },
+    "Model": {
+      "Name": "Model",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the model number for the drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "model",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Model\")"
+    },
+    "Revision": {
+      "Name": "Revision",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The revision of this Drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "revision",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Revision\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "CapacityBytes": {
+      "Name": "CapacityBytes",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The size in bytes of this Drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "capacity_bytes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CapacityBytes\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "FailurePredicted": {
+      "Name": "FailurePredicted",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"Is this drive currently predicting a failure in the near future\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "failure_predicted",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FailurePredicted\", adapter=bool)"
+    },
+    "Protocol": {
+      "Name": "Protocol",
+      "Type": "Storage.v1_0_0.Protocol",
+      "Description": "    \"\"\"The protocol this drive is using to communicate to the storage\n       controller\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "protocol",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Protocol\")"
+    },
+    "MediaType": {
+      "Name": "MediaType",
+      "Type": "Drive.v1_0_0.MediaType",
+      "Description": "    \"\"\"The type of media contained in this drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Drive.v1_0_0",
+      "ModuleName": "MediaType",
+      "PythonVariableName": "media_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MediaType\")"
+    },
+    "Manufacturer": {
+      "Name": "Manufacturer",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the manufacturer of this drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturer",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Manufacturer\")"
+    },
+    "SKU": {
+      "Name": "SKU",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the SKU for this drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "sku",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SKU\")"
+    },
+    "SerialNumber": {
+      "Name": "SerialNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The serial number for this drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "serial_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SerialNumber\")"
+    },
+    "PartNumber": {
+      "Name": "PartNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The part number for this drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "part_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PartNumber\")"
+    },
+    "AssetTag": {
+      "Name": "AssetTag",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The user assigned asset tag for this drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "asset_tag",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"AssetTag\")"
+    },
+    "Identifiers": {
+      "Name": "Identifiers",
+      "Type": "Collection(Resource.v1_1_0.Identifier)",
+      "Description": "    \"\"\"The Durable names for the drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Identifier",
+      "PythonVariableName": "identifiers",
+      "IsSubResource": false,
+      "Expression": "resource.IdentifierCollectionField(\"Identifiers\")"
+    },
+    "Location": {
+      "Name": "Location",
+      "Type": "Collection(Resource.v1_1_0.Location)",
+      "Description": "    \"\"\"The Location of the drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Location",
+      "PythonVariableName": "location",
+      "IsSubResource": false,
+      "Expression": "resource.LocationCollectionField(\"Location\")"
+    },
+    "HotspareType": {
+      "Name": "HotspareType",
+      "Type": "Drive.v1_0_0.HotspareType",
+      "Description": "    \"\"\"The type of hotspare this drive is currently serving as\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Drive.v1_0_0",
+      "ModuleName": "HotspareType",
+      "PythonVariableName": "hotspare_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"HotspareType\")"
+    },
+    "EncryptionAbility": {
+      "Name": "EncryptionAbility",
+      "Type": "Drive.v1_0_0.EncryptionAbility",
+      "Description": "    \"\"\"The encryption abilities of this drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Drive.v1_0_0",
+      "ModuleName": "EncryptionAbility",
+      "PythonVariableName": "encryption_ability",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EncryptionAbility\")"
+    },
+    "EncryptionStatus": {
+      "Name": "EncryptionStatus",
+      "Type": "Drive.v1_0_0.EncryptionStatus",
+      "Description": "    \"\"\"The status of the encryption of this drive\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Drive.v1_0_0",
+      "ModuleName": "EncryptionStatus",
+      "PythonVariableName": "encryption_status",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EncryptionStatus\")"
+    },
+    "RotationSpeedRPM": {
+      "Name": "RotationSpeedRPM",
+      "Type": "Edm.Decimal",
+      "Description": "    \"\"\"The rotation speed of this Drive in Revolutions per Minute (RPM)\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "rotation_speed_rpm",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"RotationSpeedRPM\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "BlockSizeBytes": {
+      "Name": "BlockSizeBytes",
+      "Type": "Edm.Int32",
+      "Description": "    \"\"\"The size of the smallest addressible unit (Block) of this drive in bytes\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int32",
+      "PythonVariableName": "block_size_bytes",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"BlockSizeBytes\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "CapableSpeedGbs": {
+      "Name": "CapableSpeedGbs",
+      "Type": "Edm.Decimal",
+      "Description": "    \"\"\"The speed which this drive can communicate to a storage controller in\n       ideal conditions in Gigabits per second\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "capable_speed_gbs",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"CapableSpeedGbs\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "NegotiatedSpeedGbs": {
+      "Name": "NegotiatedSpeedGbs",
+      "Type": "Edm.Decimal",
+      "Description": "    \"\"\"The speed which this drive is currently communicating to the storage\n       controller in Gigabits per second\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "negotiated_speed_gbs",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"NegotiatedSpeedGbs\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "PredictedMediaLifeLeftPercent": {
+      "Name": "PredictedMediaLifeLeftPercent",
+      "Type": "Edm.Decimal",
+      "Description": "    \"\"\"The percentage of reads and writes that are predicted to still be\n       available for the media\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "predicted_media_life_left_percent",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PredictedMediaLifeLeftPercent\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Drive.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Drive.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Drive.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Drive.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Operations": {
+      "Name": "Operations",
+      "Type": "Collection(Volume.v1_0_0.Operations)",
+      "Description": "    \"\"\"The operations currently running on the Drive.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "Operations",
+      "PythonVariableName": "operations",
+      "IsSubResource": false,
+      "Expression": "volume.OperationsCollectionField(\"Operations\")"
+    },
+    "Oem": {
+      "Name": "Oem",
+      "Description": "    \"\"\"Oem specific properties.\"\"\"",
+      "PythonVariableName": "oem",
+      "Expression": "OemField(\"Oem\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Storage.Storage",
+    "Drive.v1_1_0.Links",
+    "Intel.Oem.Drive",
+    "Resource.Oem",
+    "PCIeFunction.PCIeFunction"
+  ],
+  "fields": [
+    {
+      "Name": "Drive",
+      "Namespace": "Intel.Oem",
+      "ModuleName": "IntelRackScale",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.OemObject",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "EraseOnDetach": {
+          "Name": "EraseOnDetach",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"This indicates if drive should be erased when detached from PCI switch.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "erase_on_detach",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"EraseOnDetach\", adapter=bool)"
+        },
+        "DriveErased": {
+          "Name": "DriveErased",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"This indicates whether drive was cleared after assignment to composed\n       node.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "drive_erased",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DriveErased\", adapter=bool)"
+        },
+        "FirmwareVersion": {
+          "Name": "FirmwareVersion",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This indicates drive firmware version.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "firmware_version",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"FirmwareVersion\")"
+        },
+        "Storage": {
+          "Name": "Storage",
+          "Type": "Storage.Storage",
+          "Description": "    \"\"\"A reference to the storage controller where this drive is connected.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Storage",
+          "ModuleName": "Storage",
+          "PythonVariableName": "storage",
+          "IsSubResource": true,
+          "Expression": "storage.StorageField(\"Storage\")"
+        },
+        "PCIeFunction": {
+          "Name": "PCIeFunction",
+          "Type": "PCIeFunction.PCIeFunction",
+          "Description": "    \"\"\"A reference to the PCIe function that provides this drive functionality.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "PCIeFunction",
+          "ModuleName": "PCIeFunction",
+          "PythonVariableName": "pc_ie_function",
+          "IsSubResource": true,
+          "Expression": "pc_ie_function.PCIeFunctionField(\"PCIeFunction\")"
+        }
+      }
+    },
+    {
+      "Name": "Links",
+      "Namespace": "Drive.v1_1_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Drive.v1_0_0.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Volumes": {
+          "Name": "Volumes",
+          "Type": "Collection(Volume.Volume)",
+          "Description": "    \"\"\"An array of references to the volumes contained in this drive. This\n       will reference Volumes that are either wholly or only partly contained\n       by this drive.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Volume",
+          "ModuleName": "Volume",
+          "PythonVariableName": "volumes",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Volumes\", adapter=utils.get_members_identities)"
+        },
+        "Endpoints": {
+          "Name": "Endpoints",
+          "Type": "Collection(Endpoint.Endpoint)",
+          "Description": "    \"\"\"An array of references to the endpoints that connect to this drive.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Endpoint",
+          "ModuleName": "Endpoint",
+          "PythonVariableName": "endpoints",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Endpoints\", adapter=utils.get_members_identities)"
+        }
+      }
+    },
+    {
+      "Name": "Oem",
+      "ModuleName": "Oem",
+      "Description": null,
+      "Properties": {
+        "Intel_RackScale": {
+          "Name": "Intel_RackScale",
+          "Description": "    \"\"\"Intel Rack Scale Design specific properties.\"\"\"",
+          "PythonVariableName": "intel_rackscale",
+          "Expression": "IntelRackScaleField(\"Intel_RackScale\")"
+        }
+      },
+      "NavigationProperties": {}
+    }
+  ],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    },
+    {
+      "Name": "Storage",
+      "Namespace": "Storage",
+      "ModuleName": "Storage",
+      "ElementType": "EntityType",
+      "BaseType": "Resource.v1_0_0.Resource",
+      "IsReferenceableMember": false,
+      "Description": "       Storage defines a storage subsystem and its respective properties.  A\n       storage subsystem represents a set of storage controllers (physical or\n       virtual) and the resources such as volumes that can be accessed from\n       that subsystem.\n    \"\"\"",
+      "Properties": {}
+    },
+    {
+      "Name": "PCIeFunction",
+      "Namespace": "PCIeFunction",
+      "ModuleName": "PCIeFunction",
+      "ElementType": "EntityType",
+      "BaseType": "Resource.v1_0_0.Resource",
+      "IsReferenceableMember": false,
+      "Description": "       This is the schema definition for the PCIeFunction resource.  It\n       represents the properties of a PCIeFunction attached to a System.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Resource.v1_1_0.Identifier",
+    "Volume.v1_0_0.Operations",
+    "Resource.v1_1_0.Location"
+  ],
+  "collection_fields": [],
+  "other_collection_fields": [
+    {
+      "Name": "Location",
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Location",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Info": {
+          "Name": "Info",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This indicates the location of the resource.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "info",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Info\")"
+        },
+        "InfoFormat": {
+          "Name": "InfoFormat",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This represents the format of the Info property.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "info_format",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"InfoFormat\")"
+        },
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        }
+      }
+    },
+    {
+      "Name": "Operations",
+      "Namespace": "Volume.v1_0_0",
+      "ModuleName": "Operations",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "OperationName": {
+          "Name": "OperationName",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The name of the operation.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "operation_name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"OperationName\")"
+        },
+        "PercentageComplete": {
+          "Name": "PercentageComplete",
+          "Type": "Edm.Int32",
+          "Description": "    \"\"\"The percentage of the operation that has been completed.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int32",
+          "PythonVariableName": "percentage_complete",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PercentageComplete\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "AssociatedTask": {
+          "Name": "AssociatedTask",
+          "Type": "Task.Task",
+          "Description": "    \"\"\"A reference to the task associated with the operation if any.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "Task",
+          "ModuleName": "Task",
+          "PythonVariableName": "associated_task",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AssociatedTask\", adapter=rsd_lib_utils.get_resource_identity)"
+        }
+      }
+    },
+    {
+      "Name": "Identifier",
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "Identifier",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "DurableName": {
+          "Name": "DurableName",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This indicates the world wide, persistent name of the resource.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "durable_name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableName\")"
+        },
+        "DurableNameFormat": {
+          "Name": "DurableNameFormat",
+          "Type": "Resource.v1_1_0.DurableNameFormat",
+          "Description": "    \"\"\"This represents the format of the DurableName property.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource.v1_1_0",
+          "ModuleName": "DurableNameFormat",
+          "PythonVariableName": "durable_name_format",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"DurableNameFormat\")"
+        }
+      }
+    }
+  ],
+  "links_fields": [],
+  "other_modules": [
+    "resource",
+    "volume",
+    "storage",
+    "pc_ie_function"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": false
+}

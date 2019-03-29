@@ -1,0 +1,118 @@
+{% if need_sushy_base is equalto True %}from sushy.resources import base{% endif %}
+{% if need_sushy_utils is equalto True %}from sushy import utils{% endif %}
+
+from rsd_lib import base as rsd_lib_base
+{% for i in resource['links_fields'] -%}
+# from  import {{ i["PythonVariableName"] }}
+{% endfor -%}
+{% if resource['other_modules'] is not equalto [] %}
+# ============= import fields from other modules
+{% for i in resource['other_modules'] -%}
+# from  import {{ i }}
+{% endfor -%}
+# ============={% endif %}
+
+{% if need_rsd_lib_utils is equalto True %}from rsd_lib import utils as rsd_lib_utils{% endif %}
+
+{% if resource['other_modules'] is not equalto [] %}
+# =========== Fields should be in other module
+{% for i in resource['other_fields'] %}
+class {{ i['ModuleName']}}Field(base.CompositeField):
+{% if i['Description'] is not none %}    """{{ i['Name'] }} field
+
+{{ i['Description'] }}
+{% endif %}
+{% for key, value in i['Properties'].items() %}
+    {{ value['PythonVariableName'] }} = {{ value['Expression'] }}
+{% if value['Description'] is not none %}{{ value['Description'] }}{% endif %}
+{% endfor %}
+{% endfor %}
+{% for i in resource['other_collection_fields'] %}
+{% if need_rsd_lib_utils is equalto True %}class {{ i['ModuleName']}}CollectionField(rsd_lib_base.ReferenceableMemberField):{% else %}class {{ i['ModuleName']}}CollectionField(base.ListField):{% endif %}
+{% if i['Description'] is not none %}    """{{ i['Name'] }} field
+
+{{ i['Description'] }}
+{% endif %}
+{% for key, value in i['Properties'].items() %}
+    {{ value['PythonVariableName'] }} = {{ value['Expression'] }}
+{% if value['Description'] is not none %}{{ value['Description'] }}{% endif %}
+{% endfor %}
+{% endfor %}
+# ============================================{% endif %}
+
+{% for i in resource['fields'] %}
+class {{ i['ModuleName']}}Field(base.CompositeField):
+{% if i['Description'] is not none %}    """{{ i['Name'] }} field
+
+{{ i['Description'] }}
+{% endif %}
+{% for key, value in i['Properties'].items() %}
+    {{ value['PythonVariableName'] }} = {{ value['Expression'] }}
+{% if value['Description'] is not none %}{{ value['Description'] }}{% endif %}
+{% endfor %}
+{% endfor %}
+{% for i in resource['collection_fields'] %}
+{% if need_rsd_lib_utils is equalto True %}class {{ i['ModuleName']}}CollectionField(rsd_lib_base.ReferenceableMemberField):{% else %}class {{ i['ModuleName']}}CollectionField(base.ListField):{% endif %}
+{% if i['Description'] is not none %}    """{{ i['Name'] }} field
+
+{{ i['Description'] }}
+{% endif %}
+{% for key, value in i['Properties'].items() %}
+    {{ value['PythonVariableName'] }} = {{ value['Expression'] }}
+{% if value['Description'] is not none %}{{ value['Description'] }}{% endif %}
+{% endfor %}
+{% endfor %}
+class {{ resource['Name'] }}(rsd_lib_base.ResourceBase):
+{% if resource['Description'] is not none %}    """{{ resource['Name'] }} resource class
+
+{{ resource['Description'] }}
+{% endif %}
+{% for key, value in resource['Properties'].items() %}
+{%- if value["Name"] is not equalto "Actions" %}
+    {{ value['PythonVariableName'] }} = {{ value['Expression'] }}
+{% if value['Description'] is not none %}{{ value['Description'] }}{% endif %}
+{%- endif %}
+{% endfor %}
+{% if resource["HaveAction"] is equalto True -%}    # TODO(linyang): Add Action Field{% endif -%}
+{% for i in resource['links_fields'] %}
+{% if i["IsCollection"] is equalto True -%}
+    {% if i["IsSubResource"] is equalto True -%}WARNING FIXME SUBRESOURCE{% endif %}
+    @property
+    @utils.cache_it
+    def {{ i['PythonVariableName'] }}(self):
+        """Property to provide a list of `{{ i['ModuleName'] }}` instance
+
+           It is calculated once when it is queried for the first time. On
+           refresh, this property is reset.
+        """
+        return [
+            {{ i['PythonModuleName'] }}.{{ i['ModuleName'] }}(
+                self._conn,
+                path,
+                redfish_version=self.redfish_version)
+            for path in rsd_lib_utils.get_sub_resource_path_list_by(self, "{{ i['Name'] }}")
+        ]
+{% else -%}
+    {% if i["IsSubResource"] is equalto True -%}WARNING FIXME SUBRESOURCE{% endif %}
+    @property
+    @utils.cache_it
+    def {{ i['PythonVariableName'] }}(self):
+        """Property to provide reference to `{{ i['ModuleName'] }}` instance
+
+           It is calculated once when it is queried for the first time. On
+           refresh, this property is reset.
+        """
+        return {{ i['PythonModuleName'] }}.{{ i['ModuleName'] }}(
+            self._conn,
+            utils.get_sub_resource_path_by(self, "{{ i['Name'] }}"),
+            redfish_version=self.redfish_version
+        )
+{% endif %}
+{% endfor %}
+{% if resource["IsCollectionExist"] is equalto True %}
+class {{ resource['Name'] }}Collection(rsd_lib_base.ResourceCollectionBase):
+
+    @property
+    def _resource_type(self):
+        return {{ resource['Name'] }}
+{% endif %}

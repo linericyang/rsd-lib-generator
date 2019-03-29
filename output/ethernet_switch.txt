@@ -1,0 +1,229 @@
+{
+  "Name": "EthernetSwitch",
+  "Namespace": "EthernetSwitch.v1_0_0",
+  "ModuleName": "EthernetSwitch",
+  "ElementType": "EntityType",
+  "BaseType": "Resource.v1_0_0.Resource",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "SwitchId": {
+      "Name": "SwitchId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Unique switch Id (within drawer) used to identify in switch hierarchy\n       discovery.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "switch_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SwitchId\")"
+    },
+    "Manufacturer": {
+      "Name": "Manufacturer",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Switch manufacturer name\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturer",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Manufacturer\")"
+    },
+    "Model": {
+      "Name": "Model",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Switch model\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "model",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Model\")"
+    },
+    "ManufacturingDate": {
+      "Name": "ManufacturingDate",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Manufacturing date\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturing_date",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ManufacturingDate\")"
+    },
+    "SerialNumber": {
+      "Name": "SerialNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Switch serial numberSS\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "serial_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SerialNumber\")"
+    },
+    "PartNumber": {
+      "Name": "PartNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Switch part number\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "part_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PartNumber\")"
+    },
+    "FirmwareName": {
+      "Name": "FirmwareName",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Switch firmware name\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "firmware_name",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FirmwareName\")"
+    },
+    "FirmwareVersion": {
+      "Name": "FirmwareVersion",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"Switch firmware version\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "firmware_version",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FirmwareVersion\")"
+    },
+    "Role": {
+      "Name": "Role",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "role",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Role\")"
+    },
+    "MaxACLNumber": {
+      "Name": "MaxACLNumber",
+      "Type": "Edm.Int32",
+      "Description": "    \"\"\"Role of switch\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int32",
+      "PythonVariableName": "max_acl_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxACLNumber\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "EthernetSwitch.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitch.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "EthernetSwitch.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "EthernetSwitch.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Chassis": {
+          "Name": "Chassis",
+          "Type": "Chassis.v1_0_0.Chassis",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "Chassis.v1_0_0",
+          "ModuleName": "Chassis",
+          "PythonVariableName": "chassis",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Chassis\", adapter=rsd_lib_utils.get_resource_identity)"
+        },
+        "ManagedBy": {
+          "Name": "ManagedBy",
+          "Type": "Collection(Manager.v1_0_0.Manager)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Manager.v1_0_0",
+          "ModuleName": "Manager",
+          "PythonVariableName": "managed_by",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ManagedBy\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "Ports",
+      "Type": "EthernetSwitchPortCollection.EthernetSwitchPortCollection",
+      "Description": "    \"\"\"Collection of switch ports\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchPortCollection",
+      "ModuleName": "EthernetSwitchPortCollection",
+      "PythonVariableName": "ports",
+      "IsSubResource": false,
+      "PythonModuleName": "ethernet_switch_port"
+    },
+    {
+      "Name": "ACLs",
+      "Type": "EthernetSwitchACLCollection.EthernetSwitchACLCollection",
+      "Description": "    \"\"\"Collection of switch access control list\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "EthernetSwitchACLCollection",
+      "ModuleName": "EthernetSwitchACLCollection",
+      "PythonVariableName": "ac_ls",
+      "IsSubResource": false,
+      "PythonModuleName": "ethernet_switch_acl"
+    }
+  ],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

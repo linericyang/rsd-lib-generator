@@ -1,0 +1,216 @@
+{
+  "Name": "PCIeFunction",
+  "Namespace": "PCIeFunction.v1_0_0",
+  "ModuleName": "PCIeFunction",
+  "ElementType": "EntityType",
+  "BaseType": "PCIeFunction.PCIeFunction",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for the PCIeFunction resource.  It\n       represents the properties of a PCIeFunction attached to a System.\n    \"\"\"",
+  "Properties": {
+    "FunctionId": {
+      "Name": "FunctionId",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The the PCIe Function identifier.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "function_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FunctionId\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "FunctionType": {
+      "Name": "FunctionType",
+      "Type": "PCIeFunction.v1_0_0.FunctionType",
+      "Description": "    \"\"\"The type of the PCIe Function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PCIeFunction.v1_0_0",
+      "ModuleName": "FunctionType",
+      "PythonVariableName": "function_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FunctionType\")"
+    },
+    "DeviceClass": {
+      "Name": "DeviceClass",
+      "Type": "PCIeFunction.v1_0_0.DeviceClass",
+      "Description": "    \"\"\"The class for this PCIe Function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PCIeFunction.v1_0_0",
+      "ModuleName": "DeviceClass",
+      "PythonVariableName": "device_class",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DeviceClass\")"
+    },
+    "DeviceId": {
+      "Name": "DeviceId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Device ID of this PCIe function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "device_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DeviceId\")"
+    },
+    "VendorId": {
+      "Name": "VendorId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Vendor ID of this PCIe function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "vendor_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VendorId\")"
+    },
+    "ClassCode": {
+      "Name": "ClassCode",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Class Code of this PCIe function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "class_code",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ClassCode\")"
+    },
+    "RevisionId": {
+      "Name": "RevisionId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Revision ID of this PCIe function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "revision_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"RevisionId\")"
+    },
+    "SubsystemId": {
+      "Name": "SubsystemId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Subsystem ID of this PCIe function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "subsystem_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SubsystemId\")"
+    },
+    "SubsystemVendorId": {
+      "Name": "SubsystemVendorId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Subsystem Vendor ID of this PCIe function.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "subsystem_vendor_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SubsystemVendorId\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "PCIeFunction.v1_0_0.Links",
+      "Description": "    \"\"\"The links object contains the links to other resources that are related\n       to this resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PCIeFunction.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "PCIeFunction.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "PCIeFunction.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "EthernetInterfaces": {
+          "Name": "EthernetInterfaces",
+          "Type": "Collection(EthernetInterface.EthernetInterface)",
+          "Description": "    \"\"\"An array of references to the ethernet interfaces which the PCIe device\n       produces\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "EthernetInterface",
+          "ModuleName": "EthernetInterface",
+          "PythonVariableName": "ethernet_interfaces",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"EthernetInterfaces\", adapter=utils.get_members_identities)"
+        },
+        "Drives": {
+          "Name": "Drives",
+          "Type": "Collection(Drive.Drive)",
+          "Description": "    \"\"\"An array of references to the drives which the PCIe device produces\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Drive",
+          "ModuleName": "Drive",
+          "PythonVariableName": "drives",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Drives\", adapter=utils.get_members_identities)"
+        },
+        "StorageControllers": {
+          "Name": "StorageControllers",
+          "Type": "Collection(Storage.v1_0_0.StorageController)",
+          "Description": "    \"\"\"An array of references to the storage controllers which the PCIe device\n       produces\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Storage.v1_0_0",
+          "ModuleName": "StorageController",
+          "PythonVariableName": "storage_controllers",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"StorageControllers\", adapter=utils.get_members_identities)"
+        },
+        "PCIeDevice": {
+          "Name": "PCIeDevice",
+          "Type": "PCIeDevice.PCIeDevice",
+          "Description": "    \"\"\"A reference to the PCIeDevice on which this function resides.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "PCIeDevice",
+          "ModuleName": "PCIeDevice",
+          "PythonVariableName": "pc_ie_device",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PCIeDevice\", adapter=rsd_lib_utils.get_resource_identity)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": false
+}

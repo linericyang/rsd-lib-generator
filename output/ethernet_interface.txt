@@ -1,0 +1,608 @@
+{
+  "Name": "EthernetInterface",
+  "Namespace": "EthernetInterface.v1_1_0",
+  "ModuleName": "EthernetInterface",
+  "ElementType": "EntityType",
+  "BaseType": "EthernetInterface.v1_0_2.EthernetInterface",
+  "IsReferenceableMember": false,
+  "Description": "       This schema defines a simple ethernet NIC resource.\n    \"\"\"",
+  "Properties": {
+    "UefiDevicePath": {
+      "Name": "UefiDevicePath",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The UEFI device path for this interface\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "uefi_device_path",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"UefiDevicePath\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "InterfaceEnabled": {
+      "Name": "InterfaceEnabled",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates whether this interface is enabled.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "interface_enabled",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"InterfaceEnabled\", adapter=bool)"
+    },
+    "PermanentMACAddress": {
+      "Name": "PermanentMACAddress",
+      "Type": "EthernetInterface.v1_0_0.MACAddress",
+      "Description": "    \"\"\"This is the permanent MAC address assigned to this interface (port)\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetInterface.v1_0_0",
+      "ModuleName": "MACAddress",
+      "PythonVariableName": "permanent_mac_address",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PermanentMACAddress\")"
+    },
+    "MACAddress": {
+      "Name": "MACAddress",
+      "Type": "EthernetInterface.v1_0_0.MACAddress",
+      "Description": "    \"\"\"This is the currently configured MAC address of the (logical port)\n       interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetInterface.v1_0_0",
+      "ModuleName": "MACAddress",
+      "PythonVariableName": "mac_address",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MACAddress\")"
+    },
+    "SpeedMbps": {
+      "Name": "SpeedMbps",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"This is the current speed in Mbps of this interface.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "speed_mbps",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SpeedMbps\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "AutoNeg": {
+      "Name": "AutoNeg",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates if the speed and duplex are automatically negotiated and\n       configured on this interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "auto_neg",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"AutoNeg\", adapter=bool)"
+    },
+    "FullDuplex": {
+      "Name": "FullDuplex",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates if the interface is in Full Duplex mode or not.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "full_duplex",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FullDuplex\", adapter=bool)"
+    },
+    "MTUSize": {
+      "Name": "MTUSize",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"This is the currently configured Maximum Transmission Unit (MTU) in\n       bytes on this interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "mtu_size",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MTUSize\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "HostName": {
+      "Name": "HostName",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The DNS Host Name, without any domain information\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "host_name",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"HostName\")"
+    },
+    "FQDN": {
+      "Name": "FQDN",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the complete, fully qualified domain name obtained by DNS for\n       this interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "fqdn",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FQDN\")"
+    },
+    "MaxIPv6StaticAddresses": {
+      "Name": "MaxIPv6StaticAddresses",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"This indicates the maximum number of Static IPv6 addresses that can be\n       configured on this interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_i_pv6_static_addresses",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxIPv6StaticAddresses\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "VLAN": {
+      "Name": "VLAN",
+      "Type": "VLanNetworkInterface.v1_0_0.VLAN",
+      "Description": "    \"\"\"If this Network Interface supports more than one VLAN, this property\n       will not be present and the client should look for VLANs collection in\n       the link section of this resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "VLanNetworkInterface.v1_0_0",
+      "ModuleName": "VLAN",
+      "PythonVariableName": "vlan",
+      "IsSubResource": false,
+      "Expression": "v_lan_network_interface.VLANField(\"VLAN\")"
+    },
+    "IPv4Addresses": {
+      "Name": "IPv4Addresses",
+      "Type": "Collection(IPAddresses.v1_0_0.IPv4Address)",
+      "Description": "    \"\"\"The IPv4 addresses assigned to this interface\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv4Address",
+      "PythonVariableName": "i_pv4_addresses",
+      "IsSubResource": false,
+      "Expression": "ip_addresses.IPv4AddressCollectionField(\"IPv4Addresses\")"
+    },
+    "IPv6AddressPolicyTable": {
+      "Name": "IPv6AddressPolicyTable",
+      "Type": "Collection(EthernetInterface.v1_0_0.IPv6AddressPolicyEntry)",
+      "Description": "    \"\"\"An array representing the RFC 6724 Address Selection Policy Table.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "EthernetInterface.v1_0_0",
+      "ModuleName": "IPv6AddressPolicyEntry",
+      "PythonVariableName": "i_pv6_address_policy_table",
+      "IsSubResource": false,
+      "Expression": "IPv6AddressPolicyEntryCollectionField(\"IPv6AddressPolicyTable\")"
+    },
+    "IPv6Addresses": {
+      "Name": "IPv6Addresses",
+      "Type": "Collection(IPAddresses.v1_0_0.IPv6Address)",
+      "Description": "    \"\"\"This array of objects enumerates all of the currently assigned IPv6\n       addresses on this interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv6Address",
+      "PythonVariableName": "i_pv6_addresses",
+      "IsSubResource": false,
+      "Expression": "ip_addresses.IPv6AddressCollectionField(\"IPv6Addresses\")"
+    },
+    "IPv6StaticAddresses": {
+      "Name": "IPv6StaticAddresses",
+      "Type": "Collection(IPAddresses.v1_0_0.IPv6StaticAddress)",
+      "Description": "    \"\"\"This array of objects represents all of the IPv6 static addresses to be\n       assigned on this interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv6StaticAddress",
+      "PythonVariableName": "i_pv6_static_addresses",
+      "IsSubResource": false,
+      "Expression": "ip_addresses.IPv6StaticAddressCollectionField(\"IPv6StaticAddresses\")"
+    },
+    "IPv6DefaultGateway": {
+      "Name": "IPv6DefaultGateway",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the IPv6 default gateway address that is currently in use on\n       this interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "i_pv6_default_gateway",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"IPv6DefaultGateway\")"
+    },
+    "NameServers": {
+      "Name": "NameServers",
+      "Type": "Collection(Edm.String)",
+      "Description": "    \"\"\"This represents DNS name servers that are currently in use on this\n       interface.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "name_servers",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"NameServers\")"
+    },
+    "LinkStatus": {
+      "Name": "LinkStatus",
+      "Type": "EthernetInterface.v1_1_0.LinkStatus",
+      "Description": "    \"\"\"The link status of this interface (port)\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetInterface.v1_1_0",
+      "ModuleName": "LinkStatus",
+      "PythonVariableName": "link_status",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"LinkStatus\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "EthernetInterface.v1_1_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetInterface.v1_1_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "VLanNetworkInterface.v1_0_0.VLAN",
+    "Resource.Oem",
+    "EthernetInterface.v1_1_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "EthernetInterface.v1_1_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Endpoints": {
+          "Name": "Endpoints",
+          "Type": "Collection(Endpoint.Endpoint)",
+          "Description": "    \"\"\"An array of references to the endpoints that connect to this ethernet\n       interface.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Endpoint",
+          "ModuleName": "Endpoint",
+          "PythonVariableName": "endpoints",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Endpoints\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    },
+    {
+      "Name": "VLAN",
+      "Namespace": "VLanNetworkInterface.v1_0_0",
+      "ModuleName": "VLAN",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "VLANEnable": {
+          "Name": "VLANEnable",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"This indicates if this VLAN is enabled.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "vlan_enable",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"VLANEnable\", adapter=bool)"
+        },
+        "VLANId": {
+          "Name": "VLANId",
+          "Type": "VLanNetworkInterface.v1_0_0.VLANId",
+          "Description": "    \"\"\"This indicates the VLAN identifier for this VLAN.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "VLanNetworkInterface.v1_0_0",
+          "ModuleName": "VLANId",
+          "PythonVariableName": "vlan_id",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"VLANId\")"
+        }
+      }
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "IPAddresses.v1_0_0.IPv4Address",
+    "IPAddresses.v1_0_0.IPv6Address",
+    "IPAddresses.v1_0_0.IPv6StaticAddress",
+    "EthernetInterface.v1_0_0.IPv6AddressPolicyEntry"
+  ],
+  "collection_fields": [
+    {
+      "Name": "IPv6AddressPolicyEntry",
+      "Namespace": "EthernetInterface.v1_0_0",
+      "ModuleName": "IPv6AddressPolicyEntry",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Prefix": {
+          "Name": "Prefix",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The IPv6 Address Prefix (as defined in RFC 6724 section 2.1)\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "prefix",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Prefix\")"
+        },
+        "Precedence": {
+          "Name": "Precedence",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"The IPv6 Precedence (as defined in RFC 6724 section 2.1\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "precedence",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Precedence\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "Label": {
+          "Name": "Label",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"The IPv6 Label (as defined in RFC 6724 section 2.1)\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "label",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Label\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [
+    {
+      "Name": "IPv4Address",
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv4Address",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        },
+        "Address": {
+          "Name": "Address",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the IPv4 Address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "address",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Address\")"
+        },
+        "SubnetMask": {
+          "Name": "SubnetMask",
+          "Type": "IPAddresses.v1_0_0.SubnetMask",
+          "Description": "    \"\"\"This is the IPv4 Subnet mask.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "SubnetMask",
+          "PythonVariableName": "subnet_mask",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"SubnetMask\")"
+        },
+        "AddressOrigin": {
+          "Name": "AddressOrigin",
+          "Type": "IPAddresses.v1_0_0.IPv4AddressOrigin",
+          "Description": "    \"\"\"This indicates how the address was determined.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "IPv4AddressOrigin",
+          "PythonVariableName": "address_origin",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AddressOrigin\")"
+        },
+        "Gateway": {
+          "Name": "Gateway",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the IPv4 gateway for this address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "gateway",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Gateway\")"
+        }
+      }
+    },
+    {
+      "Name": "IPv6StaticAddress",
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv6StaticAddress",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       This object represents a single IPv6 static address to be assigned on a\n       network interface.\n    \"\"\"",
+      "Properties": {
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        },
+        "Address": {
+          "Name": "Address",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"A valid IPv6 address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "address",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Address\")"
+        },
+        "PrefixLength": {
+          "Name": "PrefixLength",
+          "Type": "IPAddresses.v1_0_0.PrefixLength",
+          "Description": "    \"\"\"The Prefix Length of this IPv6 address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "PrefixLength",
+          "PythonVariableName": "prefix_length",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PrefixLength\")"
+        }
+      }
+    },
+    {
+      "Name": "IPv6Address",
+      "Namespace": "IPAddresses.v1_0_0",
+      "ModuleName": "IPv6Address",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        },
+        "Address": {
+          "Name": "Address",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"This is the IPv6 Address.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "address",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Address\")"
+        },
+        "PrefixLength": {
+          "Name": "PrefixLength",
+          "Type": "IPAddresses.v1_0_0.PrefixLength",
+          "Description": "    \"\"\"This is the IPv6 Address Prefix Length.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "PrefixLength",
+          "PythonVariableName": "prefix_length",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PrefixLength\")"
+        },
+        "AddressOrigin": {
+          "Name": "AddressOrigin",
+          "Type": "IPAddresses.v1_0_0.IPv6AddressOrigin",
+          "Description": "    \"\"\"This indicates how the address was determined.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "IPv6AddressOrigin",
+          "PythonVariableName": "address_origin",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AddressOrigin\")"
+        },
+        "AddressState": {
+          "Name": "AddressState",
+          "Type": "IPAddresses.v1_0_0.AddressState",
+          "Description": "    \"\"\"The current state of this address as defined in RFC 4862.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "IPAddresses.v1_0_0",
+          "ModuleName": "AddressState",
+          "PythonVariableName": "address_state",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"AddressState\")"
+        }
+      }
+    }
+  ],
+  "links_fields": [
+    {
+      "Name": "VLANs",
+      "Type": "VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection",
+      "Description": "    \"\"\"This is a reference to a collection of VLANs and is only used if the\n       interface supports more than one VLANs.\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "VLanNetworkInterfaceCollection",
+      "ModuleName": "VLanNetworkInterfaceCollection",
+      "PythonVariableName": "vla_ns",
+      "IsSubResource": false,
+      "PythonModuleName": "v_lan_network_interface"
+    }
+  ],
+  "other_modules": [
+    "v_lan_network_interface",
+    "ip_addresses",
+    "resource"
+  ],
+  "IsCollectionExist": true
+}

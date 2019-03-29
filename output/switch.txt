@@ -1,0 +1,292 @@
+{
+  "Name": "Switch",
+  "Namespace": "Switch.v1_0_0",
+  "ModuleName": "Switch",
+  "ElementType": "EntityType",
+  "BaseType": "Switch.Switch",
+  "IsReferenceableMember": false,
+  "Description": "       Switch contains properties describing a simple fabric switch.\n    \"\"\"",
+  "Properties": {
+    "SwitchType": {
+      "Name": "SwitchType",
+      "Type": "Storage.v1_0_0.Protocol",
+      "Description": "    \"\"\"The protocol being sent over this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Storage.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "switch_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SwitchType\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Manufacturer": {
+      "Name": "Manufacturer",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the manufacturer of this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturer",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Manufacturer\")"
+    },
+    "Model": {
+      "Name": "Model",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The product model number of this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "model",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Model\")"
+    },
+    "SKU": {
+      "Name": "SKU",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the SKU for this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "sku",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SKU\")"
+    },
+    "SerialNumber": {
+      "Name": "SerialNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The serial number for this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "serial_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SerialNumber\")"
+    },
+    "PartNumber": {
+      "Name": "PartNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The part number for this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "part_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PartNumber\")"
+    },
+    "AssetTag": {
+      "Name": "AssetTag",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The user assigned asset tag for this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "asset_tag",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"AssetTag\")"
+    },
+    "DomainID": {
+      "Name": "DomainID",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The Domain ID for this switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "domain_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DomainID\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "IsManaged": {
+      "Name": "IsManaged",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates whether the switch is in a managed or unmanaged state.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "is_managed",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"IsManaged\", adapter=bool)"
+    },
+    "TotalSwitchWidth": {
+      "Name": "TotalSwitchWidth",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"The total number of lanes, phys, or other physical transport links that\n       this switch contains.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "total_switch_width",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"TotalSwitchWidth\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "IndicatorLED": {
+      "Name": "IndicatorLED",
+      "Type": "Resource.v1_1_0.IndicatorLED",
+      "Description": "    \"\"\"The state of the indicator LED, used to identify the switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource.v1_1_0",
+      "ModuleName": "IndicatorLED",
+      "PythonVariableName": "indicator_led",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"IndicatorLED\")"
+    },
+    "PowerState": {
+      "Name": "PowerState",
+      "Type": "Resource.v1_2_0.PowerState",
+      "Description": "    \"\"\"This is the current power state of the switch.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource.v1_2_0",
+      "ModuleName": "PowerState",
+      "PythonVariableName": "power_state",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PowerState\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Switch.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Switch.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Switch.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Switch.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Redundancy": {
+      "Name": "Redundancy",
+      "Type": "Collection(Redundancy.Redundancy)",
+      "Description": "    \"\"\"Redundancy information for the switches\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "PythonVariableName": "redundancy",
+      "IsSubResource": false,
+      "Expression": "redundancy.RedundancyCollectionField(\"Redundancy\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Switch.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "Switch.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Chassis": {
+          "Name": "Chassis",
+          "Type": "Chassis.Chassis",
+          "Description": "    \"\"\"A reference to the chassis which contains this switch.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "Chassis",
+          "ModuleName": "Chassis",
+          "PythonVariableName": "chassis",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Chassis\", adapter=rsd_lib_utils.get_resource_identity)"
+        },
+        "ManagedBy": {
+          "Name": "ManagedBy",
+          "Type": "Collection(Manager.Manager)",
+          "Description": "    \"\"\"An array of references to the managers that manage this switch.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Manager",
+          "ModuleName": "Manager",
+          "PythonVariableName": "managed_by",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ManagedBy\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Redundancy.Redundancy"
+  ],
+  "collection_fields": [],
+  "other_collection_fields": [
+    {
+      "Name": "Redundancy",
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "ElementType": "EntityType",
+      "BaseType": "Resource.v1_0_0.ReferenceableMember",
+      "IsReferenceableMember": true,
+      "Description": "       This is the common redundancy definition and structure used in other\n       Redfish schemas.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "links_fields": [
+    {
+      "Name": "Ports",
+      "Type": "PortCollection.PortCollection",
+      "Description": "    \"\"\"A collection of references to the ports for this switch.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "PortCollection",
+      "ModuleName": "PortCollection",
+      "PythonVariableName": "ports",
+      "IsSubResource": false,
+      "PythonModuleName": "port"
+    },
+    {
+      "Name": "LogServices",
+      "Type": "LogServiceCollection.LogServiceCollection",
+      "Description": "    \"\"\"A reference to the collection of Log Services associated with this\n       system\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "LogServiceCollection",
+      "ModuleName": "LogServiceCollection",
+      "PythonVariableName": "log_services",
+      "IsSubResource": false,
+      "PythonModuleName": "log_service"
+    }
+  ],
+  "other_modules": [
+    "redundancy"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

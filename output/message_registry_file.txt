@@ -1,0 +1,132 @@
+{
+  "Name": "MessageRegistryFile",
+  "Namespace": "MessageRegistryFile.v1_0_2",
+  "ModuleName": "MessageRegistryFile",
+  "ElementType": "EntityType",
+  "BaseType": "MessageRegistryFile.v1_0_0.MessageRegistryFile",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for the Schema File locator resource.\n    \"\"\"",
+  "Properties": {
+    "Languages": {
+      "Name": "Languages",
+      "Type": "Collection(Edm.String)",
+      "Description": "    \"\"\"Language codes for the schemas available.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "languages",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Languages\")"
+    },
+    "Registry": {
+      "Name": "Registry",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The Registry Name, Major and Minor version used in MessageID\n       construction.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "registry",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Registry\")"
+    },
+    "Location": {
+      "Name": "Location",
+      "Type": "Collection(MessageRegistryFile.v1_0_0.Location)",
+      "Description": "    \"\"\"Location information for this schema file.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "MessageRegistryFile.v1_0_0",
+      "ModuleName": "Location",
+      "PythonVariableName": "location",
+      "IsSubResource": false,
+      "Expression": "LocationCollectionField(\"Location\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [],
+  "fields": [],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "MessageRegistryFile.v1_0_0.Location"
+  ],
+  "collection_fields": [
+    {
+      "Name": "Location",
+      "Namespace": "MessageRegistryFile.v1_0_0",
+      "ModuleName": "Location",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Language": {
+          "Name": "Language",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The language code for the file the schema is in.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "language",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Language\")"
+        },
+        "Uri": {
+          "Name": "Uri",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"Link to locally available URI for schema.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "uri",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Uri\")"
+        },
+        "ArchiveUri": {
+          "Name": "ArchiveUri",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"If the schema is hosted on the service in an archive file, this is the\n       link to the archive file.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "archive_uri",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ArchiveUri\")"
+        },
+        "PublicationUri": {
+          "Name": "PublicationUri",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"Link to publicly available (canonical) URI for schema.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "publication_uri",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PublicationUri\")"
+        },
+        "ArchiveFile": {
+          "Name": "ArchiveFile",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"If the schema is hosted on the service in an archive file, this is the\n       name of the file within the archive.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "archive_file",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ArchiveFile\")"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

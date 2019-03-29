@@ -1,0 +1,72 @@
+{
+  "Name": "NetworkInterface",
+  "Namespace": "NetworkInterface.v1_0_0",
+  "ModuleName": "NetworkInterface",
+  "ElementType": "EntityType",
+  "BaseType": "NetworkInterface.NetworkInterface",
+  "IsReferenceableMember": false,
+  "Description": "       A NetworkInterface contains references linking  NetworkDeviceFunction\n       resources and represents the functionality available to the containing\n       system.\n    \"\"\"",
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "NetworkInterface.v1_0_0.Links",
+      "Description": "    \"\"\"Links.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "NetworkInterface.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "NetworkInterface.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "NetworkInterface.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "NetworkDeviceFunctions",
+      "Type": "NetworkDeviceFunctionCollection.NetworkDeviceFunctionCollection",
+      "Description": "    \"\"\"Contains the members of this collection.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "NetworkDeviceFunctionCollection",
+      "ModuleName": "NetworkDeviceFunctionCollection",
+      "PythonVariableName": "network_device_functions",
+      "IsSubResource": false,
+      "PythonModuleName": "network_device_function"
+    }
+  ],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

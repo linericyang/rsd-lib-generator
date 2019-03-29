@@ -1,0 +1,104 @@
+{
+  "Name": "VLanNetworkInterface",
+  "Namespace": "VLanNetworkInterface.v1_0_2",
+  "ModuleName": "VLanNetworkInterface",
+  "ElementType": "EntityType",
+  "BaseType": "VLanNetworkInterface.v1_0_1.VLanNetworkInterface",
+  "IsReferenceableMember": false,
+  "Description": "       This resource contains information for a Virtual LAN (VLAN) network\n       instance available on a manager, system or other device.\n    \"\"\"",
+  "Properties": {
+    "VLANEnable": {
+      "Name": "VLANEnable",
+      "Type": "Edm.Boolean",
+      "Description": "    \"\"\"This indicates if this VLAN is enabled.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Boolean",
+      "PythonVariableName": "vlan_enable",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VLANEnable\", adapter=bool)"
+    },
+    "VLANId": {
+      "Name": "VLANId",
+      "Type": "VLanNetworkInterface.v1_0_0.VLANId",
+      "Description": "    \"\"\"This indicates the VLAN identifier for this VLAN.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "VLanNetworkInterface.v1_0_0",
+      "ModuleName": "VLANId",
+      "PythonVariableName": "vlan_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VLANId\")"
+    },
+    "Oem": {
+      "Name": "Oem",
+      "Description": "    \"\"\"Oem specific properties.\"\"\"",
+      "PythonVariableName": "oem",
+      "Expression": "OemField(\"Oem\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Intel.Oem.VLanNetworkInterface"
+  ],
+  "fields": [
+    {
+      "Name": "VLanNetworkInterface",
+      "Namespace": "Intel.Oem",
+      "ModuleName": "IntelRackScale",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.OemObject",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        },
+        "Tagged": {
+          "Name": "Tagged",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"This indicates if VLAN is tagged (as defined in IEEE 802.1Q).\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "tagged",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Tagged\", adapter=bool)"
+        }
+      }
+    },
+    {
+      "Name": "Oem",
+      "ModuleName": "Oem",
+      "Description": null,
+      "Properties": {
+        "Intel_RackScale": {
+          "Name": "Intel_RackScale",
+          "Description": "    \"\"\"Intel Rack Scale Design specific properties.\"\"\"",
+          "PythonVariableName": "intel_rackscale",
+          "Expression": "IntelRackScaleField(\"Intel_RackScale\")"
+        }
+      },
+      "NavigationProperties": {}
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

@@ -1,0 +1,472 @@
+{
+  "Name": "Manager",
+  "Namespace": "Manager.v1_2_0",
+  "ModuleName": "Manager",
+  "ElementType": "EntityType",
+  "BaseType": "Manager.v1_1_0.Manager",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for a Manager.  Examples of managers are\n       BMCs, Enclosure Managers, Management Controllers and other subsystems\n       assigned managability functions.\n    \"\"\"",
+  "Properties": {
+    "ManagerType": {
+      "Name": "ManagerType",
+      "Type": "Manager.v1_0_0.ManagerType",
+      "Description": "    \"\"\"This property represents the type of manager that this resource\n       represents.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "ManagerType",
+      "PythonVariableName": "manager_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ManagerType\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "Manager.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "ServiceEntryPointUUID": {
+      "Name": "ServiceEntryPointUUID",
+      "Type": "Resource.UUID",
+      "Description": "    \"\"\"The UUID of the Redfish Service provided by this manager\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "UUID",
+      "PythonVariableName": "service_entry_point_uuid",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"ServiceEntryPointUUID\")"
+    },
+    "UUID": {
+      "Name": "UUID",
+      "Type": "Resource.UUID",
+      "Description": "    \"\"\"The Universal Unique Identifier (UUID) for this Manager\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "UUID",
+      "PythonVariableName": "uuid",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"UUID\")"
+    },
+    "Model": {
+      "Name": "Model",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The model information of this Manager as defined by the manufacturer\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "model",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Model\")"
+    },
+    "DateTime": {
+      "Name": "DateTime",
+      "Type": "Edm.DateTimeOffset",
+      "Description": "    \"\"\"The current DateTime (with offset) for the manager, used to set or read\n       time.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "DateTimeOffset",
+      "PythonVariableName": "date_time",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DateTime\")"
+    },
+    "DateTimeLocalOffset": {
+      "Name": "DateTimeLocalOffset",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The time offset from UTC that the DateTime property is set to in\n       format: +06:00 .\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "date_time_local_offset",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DateTimeLocalOffset\")"
+    },
+    "FirmwareVersion": {
+      "Name": "FirmwareVersion",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The firmware version of this Manager\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "firmware_version",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FirmwareVersion\")"
+    },
+    "SerialConsole": {
+      "Name": "SerialConsole",
+      "Type": "Manager.v1_0_0.SerialConsole",
+      "Description": "    \"\"\"Information about the Serial Console service provided by this manager.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "SerialConsole",
+      "PythonVariableName": "serial_console",
+      "IsSubResource": false,
+      "Expression": "SerialConsoleField(\"SerialConsole\")"
+    },
+    "CommandShell": {
+      "Name": "CommandShell",
+      "Type": "Manager.v1_0_0.CommandShell",
+      "Description": "    \"\"\"Information about the Command Shell service provided by this manager.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "CommandShell",
+      "PythonVariableName": "command_shell",
+      "IsSubResource": false,
+      "Expression": "CommandShellField(\"CommandShell\")"
+    },
+    "GraphicalConsole": {
+      "Name": "GraphicalConsole",
+      "Type": "Manager.v1_0_0.GraphicalConsole",
+      "Description": "    \"\"\"The value of this property shall contain the information about the\n       Graphical Console (KVM-IP) service of this manager.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "GraphicalConsole",
+      "PythonVariableName": "graphical_console",
+      "IsSubResource": false,
+      "Expression": "GraphicalConsoleField(\"GraphicalConsole\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "Manager.v1_0_0.Actions",
+      "Description": "    \"\"\"The available actions for this resource.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Redundancy": {
+      "Name": "Redundancy",
+      "Type": "Collection(Redundancy.Redundancy)",
+      "Description": "    \"\"\"Redundancy information for the managers of this system\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "PythonVariableName": "redundancy",
+      "IsSubResource": false,
+      "Expression": "redundancy.RedundancyCollectionField(\"Redundancy\")"
+    },
+    "PowerState": {
+      "Name": "PowerState",
+      "Type": "Resource.v1_2_0.PowerState",
+      "Description": "    \"\"\"This is the current power state of the Manager.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource.v1_2_0",
+      "ModuleName": "PowerState",
+      "PythonVariableName": "power_state",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PowerState\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Manager.v1_0_0.CommandShell",
+    "Manager.v1_1_0.Links",
+    "Manager.v1_0_0.SerialConsole",
+    "Manager.v1_0_0.GraphicalConsole"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "Manager.v1_1_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Manager.v1_0_0.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "ManagerForServers": {
+          "Name": "ManagerForServers",
+          "Type": "Collection(ComputerSystem.ComputerSystem)",
+          "Description": "    \"\"\"This property is an array of references to the systems that this\n       manager has control over.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "ComputerSystem",
+          "ModuleName": "ComputerSystem",
+          "PythonVariableName": "manager_for_servers",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ManagerForServers\", adapter=utils.get_members_identities)"
+        },
+        "ManagerForChassis": {
+          "Name": "ManagerForChassis",
+          "Type": "Collection(Chassis.Chassis)",
+          "Description": "    \"\"\"This property is an array of references to the chassis that this\n       manager has control over.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Chassis",
+          "ModuleName": "Chassis",
+          "PythonVariableName": "manager_for_chassis",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ManagerForChassis\", adapter=utils.get_members_identities)"
+        },
+        "ManagerInChassis": {
+          "Name": "ManagerInChassis",
+          "Type": "Chassis.Chassis",
+          "Description": "    \"\"\"This property is a reference to the chassis that this manager is\n       located in.\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "Chassis",
+          "ModuleName": "Chassis",
+          "PythonVariableName": "manager_in_chassis",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ManagerInChassis\", adapter=rsd_lib_utils.get_resource_identity)"
+        }
+      }
+    },
+    {
+      "Name": "SerialConsole",
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "SerialConsole",
+      "ElementType": "ComplexType",
+      "BaseType": "Manager.v1_0_0.ManagerService",
+      "IsReferenceableMember": false,
+      "Description": "       Used for describing services like Serial Console, Command Shell or\n       Graphical Console\n    \"\"\"",
+      "Properties": {
+        "ServiceEnabled": {
+          "Name": "ServiceEnabled",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"Indicates if the service is enabled for this manager.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "service_enabled",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ServiceEnabled\", adapter=bool)"
+        },
+        "MaxConcurrentSessions": {
+          "Name": "MaxConcurrentSessions",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Indicates the maximum number of service sessions, regardless of\n       protocol, this manager is able to support.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "max_concurrent_sessions",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MaxConcurrentSessions\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "ConnectTypesSupported": {
+          "Name": "ConnectTypesSupported",
+          "Type": "Collection(Manager.v1_0_0.SerialConnectTypesSupported)",
+          "Description": "    \"\"\"This object is used to enumerate the Serial Console connection types\n       allowed by the implementation.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Manager.v1_0_0",
+          "ModuleName": "SerialConnectTypesSupported",
+          "PythonVariableName": "connect_types_supported",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ConnectTypesSupported\")"
+        }
+      }
+    },
+    {
+      "Name": "GraphicalConsole",
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "GraphicalConsole",
+      "ElementType": "ComplexType",
+      "BaseType": "Manager.v1_0_0.ManagerService",
+      "IsReferenceableMember": false,
+      "Description": "       Used for describing services like Serial Console, Command Shell or\n       Graphical Console\n    \"\"\"",
+      "Properties": {
+        "ServiceEnabled": {
+          "Name": "ServiceEnabled",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"Indicates if the service is enabled for this manager.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "service_enabled",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ServiceEnabled\", adapter=bool)"
+        },
+        "MaxConcurrentSessions": {
+          "Name": "MaxConcurrentSessions",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Indicates the maximum number of service sessions, regardless of\n       protocol, this manager is able to support.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "max_concurrent_sessions",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MaxConcurrentSessions\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "ConnectTypesSupported": {
+          "Name": "ConnectTypesSupported",
+          "Type": "Collection(Manager.v1_0_0.GraphicalConnectTypesSupported)",
+          "Description": "    \"\"\"This object is used to enumerate the Graphical Console connection types\n       allowed by the implementation.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Manager.v1_0_0",
+          "ModuleName": "GraphicalConnectTypesSupported",
+          "PythonVariableName": "connect_types_supported",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ConnectTypesSupported\")"
+        }
+      }
+    },
+    {
+      "Name": "CommandShell",
+      "Namespace": "Manager.v1_0_0",
+      "ModuleName": "CommandShell",
+      "ElementType": "ComplexType",
+      "BaseType": "Manager.v1_0_0.ManagerService",
+      "IsReferenceableMember": false,
+      "Description": "       Used for describing services like Serial Console, Command Shell or\n       Graphical Console\n    \"\"\"",
+      "Properties": {
+        "ServiceEnabled": {
+          "Name": "ServiceEnabled",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"Indicates if the service is enabled for this manager.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "service_enabled",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ServiceEnabled\", adapter=bool)"
+        },
+        "MaxConcurrentSessions": {
+          "Name": "MaxConcurrentSessions",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Indicates the maximum number of service sessions, regardless of\n       protocol, this manager is able to support.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "max_concurrent_sessions",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"MaxConcurrentSessions\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "ConnectTypesSupported": {
+          "Name": "ConnectTypesSupported",
+          "Type": "Collection(Manager.v1_0_0.CommandConnectTypesSupported)",
+          "Description": "    \"\"\"This object is used to enumerate the Command Shell connection types\n       allowed by the implementation.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": true,
+          "Namespace": "Manager.v1_0_0",
+          "ModuleName": "CommandConnectTypesSupported",
+          "PythonVariableName": "connect_types_supported",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ConnectTypesSupported\")"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Redundancy.Redundancy"
+  ],
+  "collection_fields": [],
+  "other_collection_fields": [
+    {
+      "Name": "Redundancy",
+      "Namespace": "Redundancy",
+      "ModuleName": "Redundancy",
+      "ElementType": "EntityType",
+      "BaseType": "Resource.v1_0_0.ReferenceableMember",
+      "IsReferenceableMember": true,
+      "Description": "       This is the common redundancy definition and structure used in other\n       Redfish schemas.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "links_fields": [
+    {
+      "Name": "EthernetInterfaces",
+      "Type": "EthernetInterfaceCollection.EthernetInterfaceCollection",
+      "Description": "    \"\"\"This is a reference to a collection of NICs that this manager uses for\n       network communication.  It is here that clients will find NIC\n       configuration options and settings.\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "EthernetInterfaceCollection",
+      "ModuleName": "EthernetInterfaceCollection",
+      "PythonVariableName": "ethernet_interfaces",
+      "IsSubResource": false,
+      "PythonModuleName": "ethernet_interface"
+    },
+    {
+      "Name": "SerialInterfaces",
+      "Type": "SerialInterfaceCollection.SerialInterfaceCollection",
+      "Description": "    \"\"\"This is a reference to a collection of serial interfaces that this\n       manager uses for serial and console communication.  It is here that\n       clients will find serial configuration options and settings.\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "SerialInterfaceCollection",
+      "ModuleName": "SerialInterfaceCollection",
+      "PythonVariableName": "serial_interfaces",
+      "IsSubResource": false,
+      "PythonModuleName": "serial_interface"
+    },
+    {
+      "Name": "NetworkProtocol",
+      "Type": "ManagerNetworkProtocol.ManagerNetworkProtocol",
+      "Description": "    \"\"\"This is a reference to the network services and their settings that the\n       manager controls.  It is here that clients will find network\n       configuration options as well as network services.\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol",
+      "ModuleName": "ManagerNetworkProtocol",
+      "PythonVariableName": "network_protocol",
+      "IsSubResource": false,
+      "PythonModuleName": "manager_network_protocol"
+    },
+    {
+      "Name": "LogServices",
+      "Type": "LogServiceCollection.LogServiceCollection",
+      "Description": "    \"\"\"This is a reference to a collection of Logs used by the manager.\"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "LogServiceCollection",
+      "ModuleName": "LogServiceCollection",
+      "PythonVariableName": "log_services",
+      "IsSubResource": false,
+      "PythonModuleName": "log_service"
+    },
+    {
+      "Name": "VirtualMedia",
+      "Type": "VirtualMediaCollection.VirtualMediaCollection",
+      "Description": "    \"\"\"This is a reference to the Virtual Media services for this particular\n       manager.\n    \"\"\"",
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "VirtualMediaCollection",
+      "ModuleName": "VirtualMediaCollection",
+      "PythonVariableName": "virtual_media",
+      "IsSubResource": false,
+      "PythonModuleName": "virtual_media"
+    }
+  ],
+  "other_modules": [
+    "redundancy"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

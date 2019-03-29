@@ -1,0 +1,216 @@
+{
+  "Name": "LogEntry",
+  "Namespace": "LogEntry.v1_1_0",
+  "ModuleName": "LogEntry",
+  "ElementType": "EntityType",
+  "BaseType": "LogEntry.v1_0_2.LogEntry",
+  "IsReferenceableMember": false,
+  "Description": "       This resource defines the record format for a log.  It is designed to\n       be used for SEL logs (from IPMI) as well as Event Logs and OEM-specific\n       log formats.  The EntryType field indicates the type of log and the\n       resource includes several additional properties dependent on the\n       EntryType.\n    \"\"\"",
+  "Properties": {
+    "Severity": {
+      "Name": "Severity",
+      "Type": "LogEntry.v1_0_0.EventSeverity",
+      "Description": "    \"\"\"This is the severity of the log entry.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogEntry.v1_0_0",
+      "ModuleName": "EventSeverity",
+      "PythonVariableName": "severity",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Severity\")"
+    },
+    "Created": {
+      "Name": "Created",
+      "Type": "Edm.DateTimeOffset",
+      "Description": "    \"\"\"The time the log entry was created.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "DateTimeOffset",
+      "PythonVariableName": "created",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Created\")"
+    },
+    "EntryType": {
+      "Name": "EntryType",
+      "Type": "LogEntry.v1_0_0.LogEntryType",
+      "Description": "    \"\"\"his is the type of log entry.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogEntry.v1_0_0",
+      "ModuleName": "LogEntryType",
+      "PythonVariableName": "entry_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EntryType\")"
+    },
+    "OemRecordFormat": {
+      "Name": "OemRecordFormat",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"If the entry type is Oem, this will contain more information about the\n       record format from the Oem.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "oem_record_format",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"OemRecordFormat\")"
+    },
+    "EntryCode": {
+      "Name": "EntryCode",
+      "Type": "LogEntry.v1_0_0.LogEntryCode",
+      "Description": "    \"\"\"If the EntryType is SEL, this will have the entry code for the log\n       entry.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogEntry.v1_0_0",
+      "ModuleName": "LogEntryCode",
+      "PythonVariableName": "entry_code",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EntryCode\")"
+    },
+    "SensorType": {
+      "Name": "SensorType",
+      "Type": "LogEntry.v1_0_0.SensorType",
+      "Description": "    \"\"\"If the EntryType is SEL, this will have the sensor type that the log\n       entry pertains to.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogEntry.v1_0_0",
+      "ModuleName": "SensorType",
+      "PythonVariableName": "sensor_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SensorType\")"
+    },
+    "SensorNumber": {
+      "Name": "SensorNumber",
+      "Type": "Edm.Int64",
+      "Description": "    \"\"\"This property decodes from EntryType:  If it is SEL, it is the sensor\n       number; if Event then the count of events.  Otherwise, it is Oem\n       specific.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "sensor_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SensorNumber\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Message": {
+      "Name": "Message",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This property decodes from EntryType:  If it is Event then it is a\n       message string.  Otherwise, it is SEL or Oem specific.  In most cases,\n       this will be the actual Log Entry.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "message",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Message\")"
+    },
+    "MessageId": {
+      "Name": "MessageId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This property decodes from EntryType:  If it is Event then it is a\n       message id.  Otherwise, it is SEL or Oem specific.  This value is only\n       used for registries - for more information, see the specification.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "message_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MessageId\")"
+    },
+    "MessageArgs": {
+      "Name": "MessageArgs",
+      "Type": "Collection(Edm.String)",
+      "Description": "    \"\"\"The values of this property shall be any arguments for the message.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "message_args",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MessageArgs\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "LogEntry.v1_0_0.Links",
+      "Description": "    \"\"\"Contains references to other resources that are related to this\n       resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "LogEntry.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    },
+    "EventType": {
+      "Name": "EventType",
+      "Type": "Event.v1_0_0.EventType",
+      "Description": "    \"\"\"This indicates the type of an event recorded in this log.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Event.v1_0_0",
+      "ModuleName": "EventType",
+      "PythonVariableName": "event_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EventType\")"
+    },
+    "EventId": {
+      "Name": "EventId",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is a unique instance identifier of an event.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "event_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EventId\")"
+    },
+    "EventTimestamp": {
+      "Name": "EventTimestamp",
+      "Type": "Edm.DateTimeOffset",
+      "Description": "    \"\"\"This is time the event occurred.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "DateTimeOffset",
+      "PythonVariableName": "event_timestamp",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EventTimestamp\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "LogEntry.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "LogEntry.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "OriginOfCondition": {
+          "Name": "OriginOfCondition",
+          "Type": "Resource.Item",
+          "Description": "    \"\"\"This is the URI of the resource that caused the log entry\"\"\"",
+          "IsReferences": true,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Item",
+          "PythonVariableName": "origin_of_condition",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"OriginOfCondition\", adapter=rsd_lib_utils.get_resource_identity)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

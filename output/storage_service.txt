@@ -1,0 +1,109 @@
+{
+  "Name": "StorageService",
+  "Namespace": "StorageService.v1_0_0",
+  "ModuleName": "StorageService",
+  "ElementType": "EntityType",
+  "BaseType": "Resource.v1_0_0.Resource",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "StorageService.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "StorageService.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "StorageService.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "StorageService.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "ManagedBy": {
+          "Name": "ManagedBy",
+          "Type": "Collection(Manager.v1_0_0.Manager)",
+          "Description": null,
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Manager.v1_0_0",
+          "ModuleName": "Manager",
+          "PythonVariableName": "managed_by",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ManagedBy\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [
+    {
+      "Name": "RemoteTargets",
+      "Type": "RemoteTargetCollection.RemoteTargetCollection",
+      "Description": null,
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "RemoteTargetCollection",
+      "ModuleName": "RemoteTargetCollection",
+      "PythonVariableName": "remote_targets",
+      "IsSubResource": false,
+      "PythonModuleName": "remote_target"
+    },
+    {
+      "Name": "LogicalDrives",
+      "Type": "LogicalDriveCollection.LogicalDriveCollection",
+      "Description": null,
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "LogicalDriveCollection",
+      "ModuleName": "LogicalDriveCollection",
+      "PythonVariableName": "logical_drives",
+      "IsSubResource": false,
+      "PythonModuleName": "logical_drive"
+    },
+    {
+      "Name": "Drives",
+      "Type": "PhysicalDriveCollection.PhysicalDriveCollection",
+      "Description": null,
+      "IsReferences": true,
+      "IsCollection": false,
+      "Namespace": "PhysicalDriveCollection",
+      "ModuleName": "PhysicalDriveCollection",
+      "PythonVariableName": "drives",
+      "IsSubResource": false,
+      "PythonModuleName": "physical_drive"
+    }
+  ],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

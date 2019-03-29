@@ -1,0 +1,180 @@
+{
+  "Name": "PCIeDevice",
+  "Namespace": "PCIeDevice.v1_0_0",
+  "ModuleName": "PCIeDevice",
+  "ElementType": "EntityType",
+  "BaseType": "PCIeDevice.PCIeDevice",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for the PCIeDevice resource.  It\n       represents the properties of a PCIeDevice attached to a System.\n    \"\"\"",
+  "Properties": {
+    "Manufacturer": {
+      "Name": "Manufacturer",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the manufacturer of this PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "manufacturer",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Manufacturer\")"
+    },
+    "Model": {
+      "Name": "Model",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the model number for the PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "model",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Model\")"
+    },
+    "SKU": {
+      "Name": "SKU",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the SKU for this PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "sku",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SKU\")"
+    },
+    "SerialNumber": {
+      "Name": "SerialNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The serial number for this PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "serial_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"SerialNumber\")"
+    },
+    "PartNumber": {
+      "Name": "PartNumber",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The part number for this PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "part_number",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"PartNumber\")"
+    },
+    "AssetTag": {
+      "Name": "AssetTag",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The user assigned asset tag for this PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "asset_tag",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"AssetTag\")"
+    },
+    "DeviceType": {
+      "Name": "DeviceType",
+      "Type": "PCIeDevice.v1_0_0.DeviceType",
+      "Description": "    \"\"\"The device type for this PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PCIeDevice.v1_0_0",
+      "ModuleName": "DeviceType",
+      "PythonVariableName": "device_type",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DeviceType\")"
+    },
+    "FirmwareVersion": {
+      "Name": "FirmwareVersion",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The version of firmware for this PCIe device.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "firmware_version",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FirmwareVersion\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "PCIeDevice.v1_0_0.Links",
+      "Description": "    \"\"\"The links object contains the links to other resources that are related\n       to this resource.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "PCIeDevice.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "PCIeDevice.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "PCIeDevice.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": "Resource.Links",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Chassis": {
+          "Name": "Chassis",
+          "Type": "Collection(Chassis.Chassis)",
+          "Description": "    \"\"\"An array of references to the chassis in which the PCIe device is\n       contained\n    \"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "Chassis",
+          "ModuleName": "Chassis",
+          "PythonVariableName": "chassis",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Chassis\", adapter=utils.get_members_identities)"
+        },
+        "PCIeFunctions": {
+          "Name": "PCIeFunctions",
+          "Type": "Collection(PCIeFunction.PCIeFunction)",
+          "Description": "    \"\"\"An array of references to PCIeFunctions exposed by this device.\"\"\"",
+          "IsReferences": true,
+          "IsCollection": true,
+          "Namespace": "PCIeFunction",
+          "ModuleName": "PCIeFunction",
+          "PythonVariableName": "pc_ie_functions",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PCIeFunctions\", adapter=utils.get_members_identities)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": false
+}

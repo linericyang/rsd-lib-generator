@@ -1,0 +1,276 @@
+{
+  "Name": "ManagerNetworkProtocol",
+  "Namespace": "ManagerNetworkProtocol.v1_0_2",
+  "ModuleName": "ManagerNetworkProtocol",
+  "ElementType": "EntityType",
+  "BaseType": "ManagerNetworkProtocol.v1_0_0.ManagerNetworkProtocol",
+  "IsReferenceableMember": false,
+  "Description": "       This resource is used to obtain or modify the network services managed\n       by a given manager.\n    \"\"\"",
+  "Properties": {
+    "HostName": {
+      "Name": "HostName",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The DNS Host Name of this manager, without any domain information\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "host_name",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"HostName\")"
+    },
+    "FQDN": {
+      "Name": "FQDN",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"This is the fully qualified domain name for the manager obtained by DNS\n       including the host name and top-level domain name.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "fqdn",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"FQDN\")"
+    },
+    "HTTP": {
+      "Name": "HTTP",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's HTTP protocol support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "http",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"HTTP\")"
+    },
+    "HTTPS": {
+      "Name": "HTTPS",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's HTTPS protocol support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "https",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"HTTPS\")"
+    },
+    "SNMP": {
+      "Name": "SNMP",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's SNMP support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "snmp",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"SNMP\")"
+    },
+    "VirtualMedia": {
+      "Name": "VirtualMedia",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's Virtual Media support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "virtual_media",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"VirtualMedia\")"
+    },
+    "Telnet": {
+      "Name": "Telnet",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's Telnet protocol support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "telnet",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"Telnet\")"
+    },
+    "SSDP": {
+      "Name": "SSDP",
+      "Type": "ManagerNetworkProtocol.v1_0_0.SSDProtocol",
+      "Description": "    \"\"\"Settings for this Manager's SSDP support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "SSDProtocol",
+      "PythonVariableName": "ssdp",
+      "IsSubResource": false,
+      "Expression": "SSDProtocolField(\"SSDP\")"
+    },
+    "IPMI": {
+      "Name": "IPMI",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's IPMI-over-LAN protocol support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "ipmi",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"IPMI\")"
+    },
+    "SSH": {
+      "Name": "SSH",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's SSH (Secure Shell) protocol support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "ssh",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"SSH\")"
+    },
+    "KVMIP": {
+      "Name": "KVMIP",
+      "Type": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "Description": "    \"\"\"Settings for this Manager's KVM-IP protocol support\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "PythonVariableName": "kvmip",
+      "IsSubResource": false,
+      "Expression": "ProtocolField(\"KVMIP\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "ManagerNetworkProtocol.v1_0_0.Protocol",
+    "ManagerNetworkProtocol.v1_0_0.SSDProtocol"
+  ],
+  "fields": [
+    {
+      "Name": "SSDProtocol",
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "SSDProtocol",
+      "ElementType": "ComplexType",
+      "BaseType": "ManagerNetworkProtocol.v1_0_0.Protocol",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "ProtocolEnabled": {
+          "Name": "ProtocolEnabled",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"Indicates if the protocol is enabled or disabled\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "protocol_enabled",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ProtocolEnabled\", adapter=bool)"
+        },
+        "Port": {
+          "Name": "Port",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Indicates the protocol port.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "port",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Port\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "NotifyMulticastIntervalSeconds": {
+          "Name": "NotifyMulticastIntervalSeconds",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Indicates how often the Multicast is done from this service for SSDP.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "notify_multicast_interval_seconds",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"NotifyMulticastIntervalSeconds\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "NotifyTTL": {
+          "Name": "NotifyTTL",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Indicates the time to live hop count for SSDPs Notify messages.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "notify_ttl",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"NotifyTTL\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "NotifyIPv6Scope": {
+          "Name": "NotifyIPv6Scope",
+          "Type": "ManagerNetworkProtocol.v1_0_0.NotifyIPv6Scope",
+          "Description": "    \"\"\"Indicates the scope for the IPv6 Notify messages for SSDP.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "ManagerNetworkProtocol.v1_0_0",
+          "ModuleName": "NotifyIPv6Scope",
+          "PythonVariableName": "notify_i_pv6_scope",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"NotifyIPv6Scope\")"
+        }
+      }
+    },
+    {
+      "Name": "Protocol",
+      "Namespace": "ManagerNetworkProtocol.v1_0_0",
+      "ModuleName": "Protocol",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "ProtocolEnabled": {
+          "Name": "ProtocolEnabled",
+          "Type": "Edm.Boolean",
+          "Description": "    \"\"\"Indicates if the protocol is enabled or disabled\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Boolean",
+          "PythonVariableName": "protocol_enabled",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ProtocolEnabled\", adapter=bool)"
+        },
+        "Port": {
+          "Name": "Port",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"Indicates the protocol port.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "port",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Port\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    }
+  ],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": false
+}

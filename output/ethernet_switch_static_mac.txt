@@ -1,0 +1,46 @@
+{
+  "Name": "EthernetSwitchStaticMAC",
+  "Namespace": "EthernetSwitchStaticMAC.v1_0_0",
+  "ModuleName": "EthernetSwitchStaticMAC",
+  "ElementType": "EntityType",
+  "BaseType": "EthernetSwitchStaticMAC.EthernetSwitchStaticMAC",
+  "IsReferenceableMember": false,
+  "Description": "       A Ethernet Switch ACL represents Access Control List for switch.\n    \"\"\"",
+  "Properties": {
+    "VLANId": {
+      "Name": "VLANId",
+      "Type": "Edm.Int32",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int32",
+      "PythonVariableName": "vlan_id",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VLANId\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "MACAddress": {
+      "Name": "MACAddress",
+      "Type": "EthernetInterface.v1_0_0.MACAddress",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EthernetInterface.v1_0_0",
+      "ModuleName": "MACAddress",
+      "PythonVariableName": "mac_address",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MACAddress\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [],
+  "fields": [],
+  "other_fields": [],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [],
+  "collection_fields": [],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [],
+  "IsCollectionExist": true
+}

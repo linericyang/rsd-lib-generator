@@ -1,0 +1,159 @@
+{
+  "Name": "EventDestination",
+  "Namespace": "EventDestination.v1_1_0",
+  "ModuleName": "EventDestination",
+  "ElementType": "EntityType",
+  "BaseType": "EventDestination.v1_0_2.EventDestination",
+  "IsReferenceableMember": false,
+  "Description": "       An Event Destination desribes the target of an event subscription,\n       including the types of events subscribed and context to provide to the\n       target in the Event payload.\n    \"\"\"",
+  "Properties": {
+    "Destination": {
+      "Name": "Destination",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The URI of the destination Event Service.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "destination",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Destination\")"
+    },
+    "EventTypes": {
+      "Name": "EventTypes",
+      "Type": "Collection(Event.v1_0_0.EventType)",
+      "Description": "    \"\"\"This property shall contain the types of events that shall be sent to\n       the desination.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Event.v1_0_0",
+      "ModuleName": "EventType",
+      "PythonVariableName": "event_types",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"EventTypes\")"
+    },
+    "Context": {
+      "Name": "Context",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"A client-supplied string that is stored with the event destination\n       subscription.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "context",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Context\")"
+    },
+    "Protocol": {
+      "Name": "Protocol",
+      "Type": "EventDestination.v1_0_0.EventDestinationProtocol",
+      "Description": "    \"\"\"The protocol type of the event connection.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "EventDestination.v1_0_0",
+      "ModuleName": "EventDestinationProtocol",
+      "PythonVariableName": "protocol",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Protocol\")"
+    },
+    "HttpHeaders": {
+      "Name": "HttpHeaders",
+      "Type": "Collection(EventDestination.v1_0_0.HttpHeaderProperty)",
+      "Description": "    \"\"\"This is for setting HTTP headers, such as authorization information. \n       This object will be null on a GET.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "EventDestination.v1_0_0",
+      "ModuleName": "HttpHeaderProperty",
+      "PythonVariableName": "http_headers",
+      "IsSubResource": false,
+      "Expression": "HttpHeaderPropertyCollectionField(\"HttpHeaders\")"
+    },
+    "MessageIds": {
+      "Name": "MessageIds",
+      "Type": "Collection(Edm.String)",
+      "Description": "    \"\"\"A list of MessageIds that the service will only send.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "message_ids",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MessageIds\")"
+    },
+    "OriginResources": {
+      "Name": "OriginResources",
+      "Type": "Collection(Resource.Item)",
+      "Description": "    \"\"\"A list of resources for which the service will only send related events.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "Resource",
+      "ModuleName": "Item",
+      "PythonVariableName": "origin_resources",
+      "IsSubResource": false,
+      "Expression": "resource.ItemCollectionField(\"OriginResources\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Resource.Oem"
+  ],
+  "fields": [],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "Resource.Item",
+    "EventDestination.v1_0_0.HttpHeaderProperty"
+  ],
+  "collection_fields": [
+    {
+      "Name": "HttpHeaderProperty",
+      "Namespace": "EventDestination.v1_0_0",
+      "ModuleName": "HttpHeaderProperty",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       The value of the HTTP header is the property value.  The header name is\n       the property name.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "other_collection_fields": [
+    {
+      "Name": "Item",
+      "Namespace": "Resource",
+      "ModuleName": "Item",
+      "ElementType": "EntityType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       This is the base type for resources and referenceable members.\n    \"\"\"",
+      "Properties": {
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": "    \"\"\"This is the manufacturer/provider specific extension moniker used to\n       divide the Oem object into sections.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        }
+      }
+    }
+  ],
+  "links_fields": [],
+  "other_modules": [
+    "resource"
+  ],
+  "IsCollectionExist": true
+}

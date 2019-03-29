@@ -1,0 +1,364 @@
+{
+  "Name": "ThermalZone",
+  "Namespace": "ThermalZone.v1_0_0",
+  "ModuleName": "ThermalZone",
+  "ElementType": "EntityType",
+  "BaseType": "Resource.v1_0_0.Resource",
+  "IsReferenceableMember": false,
+  "Description": null,
+  "Properties": {
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    },
+    "RackLocation": {
+      "Name": "RackLocation",
+      "Type": "RackLocation.RackLocation",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "RackLocation",
+      "ModuleName": "RackLocation",
+      "PythonVariableName": "rack_location",
+      "IsSubResource": false,
+      "Expression": "rack_location.RackLocationField(\"RackLocation\")"
+    },
+    "Presence": {
+      "Name": "Presence",
+      "Type": "Edm.String",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "presence",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"Presence\")"
+    },
+    "DesiredSpeedPWM": {
+      "Name": "DesiredSpeedPWM",
+      "Type": "Edm.Decimal",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "desired_speed_pwm",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DesiredSpeedPWM\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "DesiredSpeedRPM": {
+      "Name": "DesiredSpeedRPM",
+      "Type": "Edm.Decimal",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "desired_speed_rpm",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"DesiredSpeedRPM\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "MaxFansSupported": {
+      "Name": "MaxFansSupported",
+      "Type": "Edm.Int64",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "max_fans_supported",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"MaxFansSupported\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "NumberOfFansPresent": {
+      "Name": "NumberOfFansPresent",
+      "Type": "Edm.Int64",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Int64",
+      "PythonVariableName": "number_of_fans_present",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"NumberOfFansPresent\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "VolumetricAirflow": {
+      "Name": "VolumetricAirflow",
+      "Type": "Edm.Decimal",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "Decimal",
+      "PythonVariableName": "volumetric_airflow",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"VolumetricAirflow\", adapter=rsd_lib_utils.num_or_none)"
+    },
+    "Temperatures": {
+      "Name": "Temperatures",
+      "Type": "Collection(ThermalZone.v1_0_0.TemperatureSensor)",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "ThermalZone.v1_0_0",
+      "ModuleName": "TemperatureSensor",
+      "PythonVariableName": "temperatures",
+      "IsSubResource": false,
+      "Expression": "TemperatureSensorCollectionField(\"Temperatures\")"
+    },
+    "Fans": {
+      "Name": "Fans",
+      "Type": "Collection(ThermalZone.v1_0_0.Fan)",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "ThermalZone.v1_0_0",
+      "ModuleName": "Fan",
+      "PythonVariableName": "fans",
+      "IsSubResource": false,
+      "Expression": "FanCollectionField(\"Fans\")"
+    },
+    "Actions": {
+      "Name": "Actions",
+      "Type": "ThermalZone.v1_0_0.Actions",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ThermalZone.v1_0_0",
+      "ModuleName": "Actions",
+      "PythonVariableName": "actions",
+      "IsSubResource": false
+    },
+    "Links": {
+      "Name": "Links",
+      "Type": "ThermalZone.v1_0_0.Links",
+      "Description": null,
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "ThermalZone.v1_0_0",
+      "ModuleName": "Links",
+      "PythonVariableName": "links",
+      "IsSubResource": false,
+      "Expression": "LinksField(\"Links\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "RackLocation.RackLocation",
+    "ThermalZone.v1_0_0.Links"
+  ],
+  "fields": [
+    {
+      "Name": "Links",
+      "Namespace": "ThermalZone.v1_0_0",
+      "ModuleName": "Links",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {}
+    }
+  ],
+  "other_fields": [
+    {
+      "Name": "RackLocation",
+      "Namespace": "RackLocation",
+      "ModuleName": "RackLocation",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "RackUnits": {
+          "Name": "RackUnits",
+          "Type": "RackLocation.RackLocationUnit",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RackLocation",
+          "ModuleName": "RackLocationUnit",
+          "PythonVariableName": "rack_units",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"RackUnits\")"
+        },
+        "XLocation": {
+          "Name": "XLocation",
+          "Type": "Edm.Int64",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "x_location",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"XLocation\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "ULocation": {
+          "Name": "ULocation",
+          "Type": "Edm.Int64",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "u_location",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ULocation\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "UHeight": {
+          "Name": "UHeight",
+          "Type": "Edm.Int64",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "u_height",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"UHeight\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "ThermalZone.v1_0_0.Fan",
+    "ThermalZone.v1_0_0.TemperatureSensor"
+  ],
+  "collection_fields": [
+    {
+      "Name": "TemperatureSensor",
+      "Namespace": "ThermalZone.v1_0_0",
+      "ModuleName": "TemperatureSensor",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Name": {
+          "Name": "Name",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Name\")"
+        },
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        },
+        "ReadingCelsius": {
+          "Name": "ReadingCelsius",
+          "Type": "Edm.Decimal",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Decimal",
+          "PythonVariableName": "reading_celsius",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ReadingCelsius\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "PhysicalContext": {
+          "Name": "PhysicalContext",
+          "Type": "PhysicalContext.v1_0_0.PhysicalContext",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "PhysicalContext.v1_0_0",
+          "ModuleName": "PhysicalContext",
+          "PythonVariableName": "physical_context",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"PhysicalContext\")"
+        }
+      }
+    },
+    {
+      "Name": "Fan",
+      "Namespace": "ThermalZone.v1_0_0",
+      "ModuleName": "Fan",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Name": {
+          "Name": "Name",
+          "Type": "Edm.String",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Name\")"
+        },
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        },
+        "ReadingRPM": {
+          "Name": "ReadingRPM",
+          "Type": "Edm.Decimal",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Decimal",
+          "PythonVariableName": "reading_rpm",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"ReadingRPM\", adapter=rsd_lib_utils.num_or_none)"
+        },
+        "RackLocation": {
+          "Name": "RackLocation",
+          "Type": "RackLocation.RackLocation",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "RackLocation",
+          "ModuleName": "RackLocation",
+          "PythonVariableName": "rack_location",
+          "IsSubResource": true,
+          "Expression": "rack_location.RackLocationField(\"RackLocation\")"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [
+    "rack_location"
+  ],
+  "HaveAction": true,
+  "IsCollectionExist": true
+}

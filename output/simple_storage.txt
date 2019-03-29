@@ -1,0 +1,159 @@
+{
+  "Name": "SimpleStorage",
+  "Namespace": "SimpleStorage.v1_1_0",
+  "ModuleName": "SimpleStorage",
+  "ElementType": "EntityType",
+  "BaseType": "SimpleStorage.v1_0_2.SimpleStorage",
+  "IsReferenceableMember": false,
+  "Description": "       This is the schema definition for the Simple Storage resource.  It\n       represents the properties of a storage controller and its\n       directly-attached devices.\n    \"\"\"",
+  "Properties": {
+    "UefiDevicePath": {
+      "Name": "UefiDevicePath",
+      "Type": "Edm.String",
+      "Description": "    \"\"\"The UEFI device path used to access this storage controller.\"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Edm",
+      "ModuleName": "String",
+      "PythonVariableName": "uefi_device_path",
+      "IsSubResource": false,
+      "Expression": "base.Field(\"UefiDevicePath\")"
+    },
+    "Devices": {
+      "Name": "Devices",
+      "Type": "Collection(SimpleStorage.v1_0_0.Device)",
+      "Description": "    \"\"\"The storage devices associated with this resource\"\"\"",
+      "IsReferences": false,
+      "IsCollection": true,
+      "Namespace": "SimpleStorage.v1_0_0",
+      "ModuleName": "Device",
+      "PythonVariableName": "devices",
+      "IsSubResource": false,
+      "Expression": "DeviceCollectionField(\"Devices\")"
+    },
+    "Status": {
+      "Name": "Status",
+      "Type": "Resource.Status",
+      "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+      "IsReferences": false,
+      "IsCollection": false,
+      "Namespace": "Resource",
+      "ModuleName": "Status",
+      "PythonVariableName": "status",
+      "IsSubResource": false,
+      "Expression": "rsd_lib_base.StatusField(\"Status\")"
+    }
+  },
+  "fields_name": [],
+  "fields_name_finished": [
+    "Resource.Oem"
+  ],
+  "fields": [],
+  "other_fields": [
+    {
+      "Name": "Oem",
+      "Namespace": "Resource",
+      "ModuleName": "Oem",
+      "ElementType": "ComplexType",
+      "BaseType": null,
+      "IsReferenceableMember": false,
+      "Description": "       Oem extension object.\n    \"\"\"",
+      "Properties": {}
+    }
+  ],
+  "collection_fields_name": [],
+  "collection_fields_name_finished": [
+    "SimpleStorage.v1_1_0.Device"
+  ],
+  "collection_fields": [
+    {
+      "Name": "Device",
+      "Namespace": "SimpleStorage.v1_1_0",
+      "ModuleName": "Device",
+      "ElementType": "ComplexType",
+      "BaseType": "SimpleStorage.v1_0_0.Device",
+      "IsReferenceableMember": false,
+      "Description": null,
+      "Properties": {
+        "Oem": {
+          "Name": "Oem",
+          "Type": "Resource.Oem",
+          "Description": null,
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Oem",
+          "PythonVariableName": "oem",
+          "IsSubResource": true,
+          "Expression": "resource.OemField(\"Oem\")"
+        },
+        "Name": {
+          "Name": "Name",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The name of the resource or array element.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "name",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Name\")"
+        },
+        "Status": {
+          "Name": "Status",
+          "Type": "Resource.Status",
+          "Description": "    \"\"\"This indicates the known state of the resource, such as if it is\n       enabled.\n    \"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Resource",
+          "ModuleName": "Status",
+          "PythonVariableName": "status",
+          "IsSubResource": true,
+          "Expression": "rsd_lib_base.StatusField(\"Status\")"
+        },
+        "Manufacturer": {
+          "Name": "Manufacturer",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The name of the manufacturer of this device\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "manufacturer",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Manufacturer\")"
+        },
+        "Model": {
+          "Name": "Model",
+          "Type": "Edm.String",
+          "Description": "    \"\"\"The product model number of this device\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "String",
+          "PythonVariableName": "model",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"Model\")"
+        },
+        "CapacityBytes": {
+          "Name": "CapacityBytes",
+          "Type": "Edm.Int64",
+          "Description": "    \"\"\"The size of the storage device.\"\"\"",
+          "IsReferences": false,
+          "IsCollection": false,
+          "Namespace": "Edm",
+          "ModuleName": "Int64",
+          "PythonVariableName": "capacity_bytes",
+          "IsSubResource": true,
+          "Expression": "base.Field(\"CapacityBytes\", adapter=rsd_lib_utils.num_or_none)"
+        }
+      }
+    }
+  ],
+  "other_collection_fields": [],
+  "links_fields": [],
+  "other_modules": [
+    "resource"
+  ],
+  "IsCollectionExist": true
+}
