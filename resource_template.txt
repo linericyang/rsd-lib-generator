@@ -52,7 +52,7 @@ class {{ i['ModuleName']}}Field(base.CompositeField):
 {% endfor %}
 {% endfor %}
 {% for i in resource['collection_fields'] %}
-{% if need_rsd_lib_utils is equalto True %}class {{ i['ModuleName']}}CollectionField(rsd_lib_base.ReferenceableMemberField):{% else %}class {{ i['ModuleName']}}CollectionField(base.ListField):{% endif %}
+{% if i["IsReferenceableMember"] is equalto True %}class {{ i['ModuleName']}}CollectionField(rsd_lib_base.ReferenceableMemberField):{% else %}class {{ i['ModuleName']}}CollectionField(base.ListField):{% endif %}
 {% if i['Description'] is not none %}    """{{ i['Name'] }} field
 
 {{ i['Description'] }}
